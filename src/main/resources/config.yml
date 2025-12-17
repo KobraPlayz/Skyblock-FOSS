@@ -1,0 +1,174 @@
+# =====================================================
+# SkyblockFOSS Configuration
+# Phase 1 - Core Foundation
+# =====================================================
+
+# General Settings
+general:
+  # Server name displayed in menus
+  server-name: "SkyblockFOSS"
+
+  # Debug mode (verbose logging)
+  debug: false
+
+  # Auto-save interval in seconds
+  auto-save-interval: 300
+
+  # Default profile name for new players
+  default-profile-name: "Apple"
+
+# Database Configuration
+database:
+  # Database type: MYSQL or SQLITE
+  type: SQLITE
+
+  # MySQL settings (ignored if using SQLite)
+  mysql:
+    host: localhost
+    port: 3306
+    database: skyblock
+    username: root
+    password: ""
+
+    # HikariCP connection pool settings
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  # SQLite settings
+  sqlite:
+    file: "skyblock.db"
+
+# Cache Settings (Caffeine)
+cache:
+  # Player data cache size
+  player-cache-size: 1000
+
+  # Player cache expiration in minutes
+  player-cache-expire: 30
+
+  # Item cache size
+  item-cache-size: 500
+
+# Performance Settings
+performance:
+  # Async database operations
+  async-database: true
+
+  # Batch size for bulk operations
+  batch-size: 100
+
+  # Maximum concurrent database operations
+  max-concurrent-operations: 50
+
+# Economy Settings
+economy:
+  # Starting coins for new players
+  starting-coins: 0
+
+  # Maximum coins a player can have
+  max-coins: 999999999999
+
+  # Coin formatting
+  format:
+    symbol: ""
+    decimal-places: 1
+    use-abbreviations: true
+
+  # Bank settings (Phase 2 preparation)
+  bank:
+    enabled: false
+    interest-rate: 2.0
+    interest-interval-hours: 31
+    max-interest: 250000
+
+# Profile Settings
+profiles:
+  # Maximum profiles per player
+  max-profiles: 5
+
+  # Profile names available
+  names:
+    - "Apple"
+    - "Banana"
+    - "Blueberry"
+    - "Coconut"
+    - "Cucumber"
+    - "Grapes"
+    - "Kiwi"
+    - "Lemon"
+    - "Lime"
+    - "Mango"
+    - "Orange"
+    - "Papaya"
+    - "Peach"
+    - "Pear"
+    - "Pineapple"
+    - "Pomegranate"
+    - "Raspberry"
+    - "Strawberry"
+    - "Tomato"
+    - "Watermelon"
+    - "Zucchini"
+
+  # Cooldown between profile switches (seconds)
+  switch-cooldown: 5
+
+  # Confirmation required for profile deletion
+  deletion-confirmation: true
+
+# GUI Settings
+gui:
+  # Click sound
+  click-sound: UI_BUTTON_CLICK
+
+  # Success sound
+  success-sound: ENTITY_PLAYER_LEVELUP
+
+  # Error sound
+  error-sound: ENTITY_VILLAGER_NO
+
+  # Enable GUI animations
+  animations: true
+
+  # GUI update interval (ticks)
+  update-interval: 20
+
+# Particle Settings
+particles:
+  # Enable particles
+  enabled: true
+
+  # Level up particles
+  level-up: true
+
+  # Collection unlock particles
+  collection-unlock: true
+
+  # Rare drop particles
+  rare-drop: true
+
+# Sound Settings
+sounds:
+  # Enable sounds
+  enabled: true
+
+  # Level up sound
+  level-up: true
+
+  # Collection unlock sound
+  collection-unlock: true
+
+  # Rare drop sound
+  rare-drop: true
+
+# Hooks
+hooks:
+  # Vault integration
+  vault: true
+
+  # PlaceholderAPI integration
+  placeholderapi: true

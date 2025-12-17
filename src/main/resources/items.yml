@@ -1,0 +1,757 @@
+# =====================================================
+# SkyblockFOSS Items Configuration
+# Custom items with stats, abilities, and rarities
+# =====================================================
+
+# Item Categories
+categories:
+  - WEAPON
+  - BOW
+  - ARMOR
+  - TOOL
+  - ACCESSORY
+  - CONSUMABLE
+  - MATERIAL
+  - PET_ITEM
+  - MINION
+  - MISC
+
+# Rarity Colors
+rarities:
+  COMMON:
+    color: "&f"
+    display: "&fCOMMON"
+  UNCOMMON:
+    color: "&a"
+    display: "&aUNCOMMON"
+  RARE:
+    color: "&9"
+    display: "&9RARE"
+  EPIC:
+    color: "&5"
+    display: "&5EPIC"
+  LEGENDARY:
+    color: "&6"
+    display: "&6LEGENDARY"
+  MYTHIC:
+    color: "&d"
+    display: "&dMYTHIC"
+  DIVINE:
+    color: "&b"
+    display: "&bDIVINE"
+  SPECIAL:
+    color: "&c"
+    display: "&cSPECIAL"
+  VERY_SPECIAL:
+    color: "&c"
+    display: "&c&lVERY SPECIAL"
+
+# Stat Types
+stats:
+  DAMAGE:
+    display: "&c❁ Damage"
+    symbol: "❁"
+    color: "&c"
+  STRENGTH:
+    display: "&c❁ Strength"
+    symbol: "❁"
+    color: "&c"
+  CRIT_CHANCE:
+    display: "&9☣ Crit Chance"
+    symbol: "☣"
+    color: "&9"
+    suffix: "%"
+  CRIT_DAMAGE:
+    display: "&9☠ Crit Damage"
+    symbol: "☠"
+    color: "&9"
+    suffix: "%"
+  HEALTH:
+    display: "&c❤ Health"
+    symbol: "❤"
+    color: "&c"
+  DEFENSE:
+    display: "&a❈ Defense"
+    symbol: "❈"
+    color: "&a"
+  SPEED:
+    display: "&f✦ Speed"
+    symbol: "✦"
+    color: "&f"
+    suffix: "%"
+  INTELLIGENCE:
+    display: "&b✎ Intelligence"
+    symbol: "✎"
+    color: "&b"
+  MAGIC_FIND:
+    display: "&b✯ Magic Find"
+    symbol: "✯"
+    color: "&b"
+  SEA_CREATURE_CHANCE:
+    display: "&3α Sea Creature Chance"
+    symbol: "α"
+    color: "&3"
+    suffix: "%"
+  FEROCITY:
+    display: "&c⫽ Ferocity"
+    symbol: "⫽"
+    color: "&c"
+  ABILITY_DAMAGE:
+    display: "&c๑ Ability Damage"
+    symbol: "๑"
+    color: "&c"
+    suffix: "%"
+  MINING_SPEED:
+    display: "&6⸕ Mining Speed"
+    symbol: "⸕"
+    color: "&6"
+  MINING_FORTUNE:
+    display: "&6☘ Mining Fortune"
+    symbol: "☘"
+    color: "&6"
+  FARMING_FORTUNE:
+    display: "&6☘ Farming Fortune"
+    symbol: "☘"
+    color: "&6"
+  FORAGING_FORTUNE:
+    display: "&6☘ Foraging Fortune"
+    symbol: "☘"
+    color: "&6"
+  TRUE_DEFENSE:
+    display: "&f❂ True Defense"
+    symbol: "❂"
+    color: "&f"
+  PET_LUCK:
+    display: "&d♣ Pet Luck"
+    symbol: "♣"
+    color: "&d"
+
+# Item Definitions
+items:
+  # ==================== WEAPONS ====================
+  ASPECT_OF_THE_END:
+    material: DIAMOND_SWORD
+    name: "&5Aspect of the End"
+    category: WEAPON
+    rarity: RARE
+    stats:
+      DAMAGE: 100
+      STRENGTH: 100
+    ability:
+      name: "Instant Transmission"
+      trigger: RIGHT_CLICK
+      description:
+        - "&7Teleport &a8 blocks &7ahead of"
+        - "&7you and gain &a+50 &f✦ Speed"
+        - "&7for &a3 seconds&7."
+      cooldown: 0
+      mana-cost: 50
+
+  ZOMBIE_SWORD:
+    material: GOLDEN_SWORD
+    name: "&9Zombie Sword"
+    category: WEAPON
+    rarity: RARE
+    stats:
+      DAMAGE: 100
+      STRENGTH: 50
+    ability:
+      name: "Instant Heal"
+      trigger: RIGHT_CLICK
+      description:
+        - "&7Heal &c+100❤ &7and heal"
+        - "&7nearby players for &c+50❤&7."
+      cooldown: 1
+      mana-cost: 70
+
+  GOLEM_SWORD:
+    material: IRON_SWORD
+    name: "&aGolem Sword"
+    category: WEAPON
+    rarity: UNCOMMON
+    stats:
+      DAMAGE: 80
+      STRENGTH: 25
+    ability:
+      name: "Iron Punch"
+      trigger: RIGHT_CLICK
+      description:
+        - "&7Punch the ground, dealing"
+        - "&c{damage} &7damage to mobs within"
+        - "&e3 blocks&7."
+      cooldown: 2
+      mana-cost: 30
+
+  RAIDER_AXE:
+    material: IRON_AXE
+    name: "&aRaider Axe"
+    category: WEAPON
+    rarity: UNCOMMON
+    stats:
+      DAMAGE: 115
+      STRENGTH: 35
+    ability:
+      name: "Double Coins"
+      trigger: PASSIVE
+      description:
+        - "&7Grants +&635 coins &7on kill."
+
+  END_STONE_SWORD:
+    material: STONE_SWORD
+    name: "&9End Stone Sword"
+    category: WEAPON
+    rarity: RARE
+    stats:
+      DAMAGE: 140
+      STRENGTH: 50
+    ability:
+      name: "Extreme Focus"
+      trigger: PASSIVE
+      description:
+        - "&7Increases damage dealt to"
+        - "&7Endermen by &a100%&7."
+
+  UNDEAD_SWORD:
+    material: IRON_SWORD
+    name: "&aUndead Sword"
+    category: WEAPON
+    rarity: UNCOMMON
+    stats:
+      DAMAGE: 50
+      STRENGTH: 20
+    ability:
+      name: "Undead Damage"
+      trigger: PASSIVE
+      description:
+        - "&7Increases damage dealt to"
+        - "&7Zombies and Skeletons by &a100%&7."
+
+  # ==================== BOWS ====================
+  ENDER_BOW:
+    material: BOW
+    name: "&9Ender Bow"
+    category: BOW
+    rarity: RARE
+    stats:
+      DAMAGE: 130
+      STRENGTH: 50
+    ability:
+      name: "Ender Warp"
+      trigger: PASSIVE
+      description:
+        - "&7Arrows teleport you to where"
+        - "&7they land if within &a30 blocks&7."
+
+  RUNAANS_BOW:
+    material: BOW
+    name: "&6Runaan's Bow"
+    category: BOW
+    rarity: LEGENDARY
+    stats:
+      DAMAGE: 160
+      STRENGTH: 60
+      CRIT_CHANCE: 10
+      CRIT_DAMAGE: 40
+    ability:
+      name: "Triple Shot"
+      trigger: PASSIVE
+      description:
+        - "&7Shoots 3 arrows at a time."
+        - "&7The 2 extra arrows deal"
+        - "&c40% &7damage and home towards"
+        - "&7nearby mobs."
+
+  # ==================== ARMOR ====================
+  LAPIS_HELMET:
+    material: LEATHER_HELMET
+    name: "&9Lapis Armor Helmet"
+    category: ARMOR
+    rarity: UNCOMMON
+    leather-color: "0055FF"
+    stats:
+      HEALTH: 25
+      DEFENSE: 25
+    ability:
+      name: "Lapis Experience"
+      trigger: FULL_SET
+      description:
+        - "&7Grants &a+50% &7experience when"
+        - "&7mining ores."
+
+  LAPIS_CHESTPLATE:
+    material: LEATHER_CHESTPLATE
+    name: "&9Lapis Armor Chestplate"
+    category: ARMOR
+    rarity: UNCOMMON
+    leather-color: "0055FF"
+    stats:
+      HEALTH: 40
+      DEFENSE: 40
+
+  LAPIS_LEGGINGS:
+    material: LEATHER_LEGGINGS
+    name: "&9Lapis Armor Leggings"
+    category: ARMOR
+    rarity: UNCOMMON
+    leather-color: "0055FF"
+    stats:
+      HEALTH: 35
+      DEFENSE: 35
+
+  LAPIS_BOOTS:
+    material: LEATHER_BOOTS
+    name: "&9Lapis Armor Boots"
+    category: ARMOR
+    rarity: UNCOMMON
+    leather-color: "0055FF"
+    stats:
+      HEALTH: 20
+      DEFENSE: 20
+
+  HARDENED_DIAMOND_HELMET:
+    material: DIAMOND_HELMET
+    name: "&9Hardened Diamond Helmet"
+    category: ARMOR
+    rarity: RARE
+    stats:
+      HEALTH: 15
+      DEFENSE: 60
+
+  HARDENED_DIAMOND_CHESTPLATE:
+    material: DIAMOND_CHESTPLATE
+    name: "&9Hardened Diamond Chestplate"
+    category: ARMOR
+    rarity: RARE
+    stats:
+      HEALTH: 25
+      DEFENSE: 100
+
+  HARDENED_DIAMOND_LEGGINGS:
+    material: DIAMOND_LEGGINGS
+    name: "&9Hardened Diamond Leggings"
+    category: ARMOR
+    rarity: RARE
+    stats:
+      HEALTH: 20
+      DEFENSE: 80
+
+  HARDENED_DIAMOND_BOOTS:
+    material: DIAMOND_BOOTS
+    name: "&9Hardened Diamond Boots"
+    category: ARMOR
+    rarity: RARE
+    stats:
+      HEALTH: 10
+      DEFENSE: 40
+
+  MINER_HELMET:
+    material: IRON_HELMET
+    name: "&fMiner's Outfit Helmet"
+    category: ARMOR
+    rarity: COMMON
+    stats:
+      DEFENSE: 10
+      MINING_SPEED: 15
+
+  MINER_CHESTPLATE:
+    material: IRON_CHESTPLATE
+    name: "&fMiner's Outfit Chestplate"
+    category: ARMOR
+    rarity: COMMON
+    stats:
+      DEFENSE: 25
+      MINING_SPEED: 25
+
+  MINER_LEGGINGS:
+    material: IRON_LEGGINGS
+    name: "&fMiner's Outfit Leggings"
+    category: ARMOR
+    rarity: COMMON
+    stats:
+      DEFENSE: 20
+      MINING_SPEED: 20
+
+  MINER_BOOTS:
+    material: IRON_BOOTS
+    name: "&fMiner's Outfit Boots"
+    category: ARMOR
+    rarity: COMMON
+    stats:
+      DEFENSE: 5
+      MINING_SPEED: 10
+
+  # ==================== TOOLS ====================
+  ROOKIE_PICKAXE:
+    material: STONE_PICKAXE
+    name: "&fRookie Pickaxe"
+    category: TOOL
+    rarity: COMMON
+    stats:
+      DAMAGE: 15
+      MINING_SPEED: 50
+
+  ROOKIE_HOE:
+    material: STONE_HOE
+    name: "&fRookie Hoe"
+    category: TOOL
+    rarity: COMMON
+    stats:
+      FARMING_FORTUNE: 10
+
+  SWEET_AXE:
+    material: IRON_AXE
+    name: "&aSweet Axe"
+    category: TOOL
+    rarity: UNCOMMON
+    stats:
+      DAMAGE: 60
+      FORAGING_FORTUNE: 25
+
+  TREECAPITATOR:
+    material: GOLDEN_AXE
+    name: "&6Treecapitator"
+    category: TOOL
+    rarity: LEGENDARY
+    stats:
+      DAMAGE: 100
+      FORAGING_FORTUNE: 100
+    ability:
+      name: "Tree Feller"
+      trigger: PASSIVE
+      description:
+        - "&7Breaks entire trees instantly!"
+
+  PUMPKIN_DICER:
+    material: GOLDEN_HOE
+    name: "&6Pumpkin Dicer"
+    category: TOOL
+    rarity: EPIC
+    stats:
+      FARMING_FORTUNE: 50
+    ability:
+      name: "Pumpkin Harvest"
+      trigger: PASSIVE
+      description:
+        - "&7Farms pumpkins in a &a3x3 &7area."
+
+  MELON_DICER:
+    material: GOLDEN_HOE
+    name: "&5Melon Dicer"
+    category: TOOL
+    rarity: EPIC
+    stats:
+      FARMING_FORTUNE: 50
+    ability:
+      name: "Melon Harvest"
+      trigger: PASSIVE
+      description:
+        - "&7Farms melons in a &a3x3 &7area."
+
+  # ==================== ACCESSORIES ====================
+  SPEED_TALISMAN:
+    material: PLAYER_HEAD
+    skull-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzI2YjJhNmZhZmI3M2ZhNTJhN2E4NDRmNWFlMjk2YzlhMzQ5NmMzYmU5NWY1NDE1OGYzNTUwMTU0MWM5MTF9fX0="
+    name: "&aSpeed Talisman"
+    category: ACCESSORY
+    rarity: COMMON
+    stats:
+      SPEED: 1
+
+  POTATO_TALISMAN:
+    material: PLAYER_HEAD
+    skull-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGI3NTc4ZTZiOTVkMDZjMWQzYmY0ZTI5ZGRiMDRkMDExNWQyMTQzMmJjNzBmMTg0NjUzNTBmODgxODNkNjhkZCJ9fX0="
+    name: "&aPotato Talisman"
+    category: ACCESSORY
+    rarity: UNCOMMON
+    stats:
+      FARMING_FORTUNE: 5
+
+  ZOMBIE_RING:
+    material: PLAYER_HEAD
+    skull-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM2YjE2MzFjOWNmYmE2ZTZiOGZkMTM0YjM1YjRhNmMzNjc2NjBiMTFjMDg5NmE4YjFhMDMzYTQ1ZjU4NDUzOCJ9fX0="
+    name: "&9Zombie Ring"
+    category: ACCESSORY
+    rarity: RARE
+    stats:
+      HEALTH: 30
+      DEFENSE: 5
+
+  ENDER_RING:
+    material: PLAYER_HEAD
+    skull-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2E1OWJiMGE3YTFiMTZhNmYyNTMyNTYxOGI0NDQ3MzRjYTVmNGY0MDdmNzM0YmQ3YTg4MjVlYjViNmM2YzI1OSJ9fX0="
+    name: "&5Ender Ring"
+    category: ACCESSORY
+    rarity: EPIC
+    stats:
+      HEALTH: 15
+      DEFENSE: 15
+      INTELLIGENCE: 15
+
+  EMERALD_RING:
+    material: PLAYER_HEAD
+    skull-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjNkMjQ4YTVmOWE3NzQ4NzQwMzYzNmY1MzE4ZTIzNGE0NTNjNDU4OGFjYTI5N2Y3NmEzZWRlYjQ1MTY3MDc4NiJ9fX0="
+    name: "&aEmerald Ring"
+    category: ACCESSORY
+    rarity: UNCOMMON
+    stats:
+      HEALTH: 10
+
+  EXPERIENCE_ARTIFACT:
+    material: PLAYER_HEAD
+    skull-texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWJlOTgzZWM0NzgwMjRlYzQzOGI3NTlmZjZkNmVjYTc3YWFjY2VmZDVkZTI1MWFkOTFjOGMyNmM5OWYxNzAifX19"
+    name: "&5Experience Artifact"
+    category: ACCESSORY
+    rarity: EPIC
+    ability:
+      name: "Experience"
+      trigger: PASSIVE
+      description:
+        - "&7Grants &a+25% &7experience."
+
+  # ==================== MATERIALS ====================
+  ENCHANTED_DIAMOND:
+    material: DIAMOND
+    name: "&aEnchanted Diamond"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_EMERALD:
+    material: EMERALD
+    name: "&aEnchanted Emerald"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_GOLD:
+    material: GOLD_INGOT
+    name: "&aEnchanted Gold"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_IRON:
+    material: IRON_INGOT
+    name: "&aEnchanted Iron"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_COAL:
+    material: COAL
+    name: "&aEnchanted Coal"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_LAPIS_LAZULI:
+    material: LAPIS_LAZULI
+    name: "&aEnchanted Lapis Lazuli"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_REDSTONE:
+    material: REDSTONE
+    name: "&aEnchanted Redstone"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_OAK_LOG:
+    material: OAK_LOG
+    name: "&aEnchanted Oak Wood"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_COBBLESTONE:
+    material: COBBLESTONE
+    name: "&aEnchanted Cobblestone"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_ROTTEN_FLESH:
+    material: ROTTEN_FLESH
+    name: "&aEnchanted Rotten Flesh"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_BONE:
+    material: BONE
+    name: "&aEnchanted Bone"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_STRING:
+    material: STRING
+    name: "&aEnchanted String"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_ENDER_PEARL:
+    material: ENDER_PEARL
+    name: "&aEnchanted Ender Pearl"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  ENCHANTED_RAW_FISH:
+    material: COD
+    name: "&aEnchanted Raw Fish"
+    category: MATERIAL
+    rarity: UNCOMMON
+    enchanted: true
+
+  HOT_POTATO_BOOK:
+    material: BOOK
+    name: "&6Hot Potato Book"
+    category: CONSUMABLE
+    rarity: RARE
+    enchanted: true
+    ability:
+      name: "Hot Potato"
+      trigger: USE
+      description:
+        - "&7Apply to a weapon or armor"
+        - "&7piece to increase its stats."
+
+  ENCHANTED_BREAD:
+    material: BREAD
+    name: "&aEnchanted Bread"
+    category: CONSUMABLE
+    rarity: UNCOMMON
+    enchanted: true
+    ability:
+      name: "Satisfied"
+      trigger: USE
+      description:
+        - "&7Fully fills your hunger bar"
+        - "&7and grants Saturation."
+
+# Reforge Definitions (for weapons/armor)
+reforges:
+  # Weapon Reforges
+  weapon:
+    SHARP:
+      stats:
+        COMMON: { DAMAGE: 5, CRIT_DAMAGE: 5 }
+        UNCOMMON: { DAMAGE: 10, CRIT_DAMAGE: 10 }
+        RARE: { DAMAGE: 15, CRIT_DAMAGE: 15 }
+        EPIC: { DAMAGE: 20, CRIT_DAMAGE: 20 }
+        LEGENDARY: { DAMAGE: 25, CRIT_DAMAGE: 25 }
+        MYTHIC: { DAMAGE: 30, CRIT_DAMAGE: 30 }
+
+    SPICY:
+      stats:
+        COMMON: { STRENGTH: 2, CRIT_CHANCE: 1, CRIT_DAMAGE: 25 }
+        UNCOMMON: { STRENGTH: 3, CRIT_CHANCE: 1, CRIT_DAMAGE: 35 }
+        RARE: { STRENGTH: 4, CRIT_CHANCE: 1, CRIT_DAMAGE: 45 }
+        EPIC: { STRENGTH: 7, CRIT_CHANCE: 1, CRIT_DAMAGE: 60 }
+        LEGENDARY: { STRENGTH: 10, CRIT_CHANCE: 1, CRIT_DAMAGE: 80 }
+        MYTHIC: { STRENGTH: 12, CRIT_CHANCE: 1, CRIT_DAMAGE: 100 }
+
+    LEGENDARY:
+      stats:
+        COMMON: { DAMAGE: 3, STRENGTH: 5, CRIT_CHANCE: 5, CRIT_DAMAGE: 10, INTELLIGENCE: 5 }
+        UNCOMMON: { DAMAGE: 7, STRENGTH: 10, CRIT_CHANCE: 7, CRIT_DAMAGE: 15, INTELLIGENCE: 8 }
+        RARE: { DAMAGE: 12, STRENGTH: 15, CRIT_CHANCE: 9, CRIT_DAMAGE: 22, INTELLIGENCE: 12 }
+        EPIC: { DAMAGE: 18, STRENGTH: 22, CRIT_CHANCE: 11, CRIT_DAMAGE: 30, INTELLIGENCE: 18 }
+        LEGENDARY: { DAMAGE: 25, STRENGTH: 32, CRIT_CHANCE: 13, CRIT_DAMAGE: 40, INTELLIGENCE: 28 }
+        MYTHIC: { DAMAGE: 32, STRENGTH: 40, CRIT_CHANCE: 15, CRIT_DAMAGE: 50, INTELLIGENCE: 35 }
+
+    FABLED:
+      stats:
+        COMMON: { STRENGTH: 30, CRIT_DAMAGE: 15 }
+        UNCOMMON: { STRENGTH: 35, CRIT_DAMAGE: 20 }
+        RARE: { STRENGTH: 40, CRIT_DAMAGE: 25 }
+        EPIC: { STRENGTH: 50, CRIT_DAMAGE: 30 }
+        LEGENDARY: { STRENGTH: 60, CRIT_DAMAGE: 35 }
+        MYTHIC: { STRENGTH: 70, CRIT_DAMAGE: 40 }
+
+    WITHERED:
+      stats:
+        COMMON: { STRENGTH: 60 }
+        UNCOMMON: { STRENGTH: 75 }
+        RARE: { STRENGTH: 90 }
+        EPIC: { STRENGTH: 110 }
+        LEGENDARY: { STRENGTH: 135 }
+        MYTHIC: { STRENGTH: 160 }
+
+  # Armor Reforges
+  armor:
+    PURE:
+      stats:
+        COMMON: { HEALTH: 2, DEFENSE: 2, STRENGTH: 2, CRIT_CHANCE: 2, CRIT_DAMAGE: 2, INTELLIGENCE: 2, SPEED: 1 }
+        UNCOMMON: { HEALTH: 3, DEFENSE: 3, STRENGTH: 3, CRIT_CHANCE: 4, CRIT_DAMAGE: 4, INTELLIGENCE: 3, SPEED: 1 }
+        RARE: { HEALTH: 4, DEFENSE: 4, STRENGTH: 4, CRIT_CHANCE: 6, CRIT_DAMAGE: 6, INTELLIGENCE: 4, SPEED: 1 }
+        EPIC: { HEALTH: 6, DEFENSE: 6, STRENGTH: 6, CRIT_CHANCE: 8, CRIT_DAMAGE: 8, INTELLIGENCE: 6, SPEED: 1 }
+        LEGENDARY: { HEALTH: 8, DEFENSE: 8, STRENGTH: 8, CRIT_CHANCE: 10, CRIT_DAMAGE: 10, INTELLIGENCE: 8, SPEED: 2 }
+        MYTHIC: { HEALTH: 10, DEFENSE: 10, STRENGTH: 10, CRIT_CHANCE: 12, CRIT_DAMAGE: 12, INTELLIGENCE: 10, SPEED: 2 }
+
+    FIERCE:
+      stats:
+        COMMON: { STRENGTH: 2, CRIT_CHANCE: 2, CRIT_DAMAGE: 4 }
+        UNCOMMON: { STRENGTH: 4, CRIT_CHANCE: 3, CRIT_DAMAGE: 7 }
+        RARE: { STRENGTH: 6, CRIT_CHANCE: 4, CRIT_DAMAGE: 10 }
+        EPIC: { STRENGTH: 8, CRIT_CHANCE: 5, CRIT_DAMAGE: 14 }
+        LEGENDARY: { STRENGTH: 10, CRIT_CHANCE: 6, CRIT_DAMAGE: 18 }
+        MYTHIC: { STRENGTH: 12, CRIT_CHANCE: 7, CRIT_DAMAGE: 22 }
+
+    ANCIENT:
+      stats:
+        COMMON: { STRENGTH: 4, CRIT_CHANCE: 3, CRIT_DAMAGE: 3, INTELLIGENCE: 6 }
+        UNCOMMON: { STRENGTH: 8, CRIT_CHANCE: 5, CRIT_DAMAGE: 5, INTELLIGENCE: 9 }
+        RARE: { STRENGTH: 12, CRIT_CHANCE: 7, CRIT_DAMAGE: 7, INTELLIGENCE: 12 }
+        EPIC: { STRENGTH: 18, CRIT_CHANCE: 9, CRIT_DAMAGE: 9, INTELLIGENCE: 16 }
+        LEGENDARY: { STRENGTH: 25, CRIT_CHANCE: 12, CRIT_DAMAGE: 12, INTELLIGENCE: 20 }
+        MYTHIC: { STRENGTH: 32, CRIT_CHANCE: 15, CRIT_DAMAGE: 15, INTELLIGENCE: 25 }
+
+    GIANT:
+      stats:
+        COMMON: { HEALTH: 50 }
+        UNCOMMON: { HEALTH: 60 }
+        RARE: { HEALTH: 80 }
+        EPIC: { HEALTH: 120 }
+        LEGENDARY: { HEALTH: 180 }
+        MYTHIC: { HEALTH: 240 }
+
+    NECROTIC:
+      stats:
+        COMMON: { INTELLIGENCE: 30 }
+        UNCOMMON: { INTELLIGENCE: 60 }
+        RARE: { INTELLIGENCE: 90 }
+        EPIC: { INTELLIGENCE: 120 }
+        LEGENDARY: { INTELLIGENCE: 150 }
+        MYTHIC: { INTELLIGENCE: 200 }
+
+# Reforge Stone Definitions
+reforge-stones:
+  DRAGON_HORN:
+    reforge: RENOWNED
+    applicable-to: [ARMOR]
+    display: "&6Dragon Horn"
+
+  PRECURSOR_GEAR:
+    reforge: ANCIENT
+    applicable-to: [ARMOR]
+    display: "&5Precursor Gear"
+
+  GIANT_TOOTH:
+    reforge: GIANT
+    applicable-to: [ARMOR]
+    display: "&5Giant's Tooth"
+
+  WITHER_BLOOD:
+    reforge: WITHERED
+    applicable-to: [WEAPON]
+    display: "&5Wither Blood"
+
+  DRAGON_CLAW:
+    reforge: FABLED
+    applicable-to: [WEAPON]
+    display: "&6Dragon Claw"
