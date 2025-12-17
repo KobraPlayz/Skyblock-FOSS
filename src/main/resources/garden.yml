@@ -1,0 +1,127 @@
+# Garden Configuration
+# SkyblockFOSS Phase 1.5
+
+garden:
+  # Skyblock level required to unlock garden
+  # Based on skill average (simplified from Hypixel's system)
+  unlock_skyblock_level: 5
+  # Total number of plots
+  total_plots: 24
+  # Size of each plot in blocks
+  plot_size: 96
+  # Starting copper balance
+  default_copper: 0
+  # Starting compost balance
+  default_compost: 0
+
+# Crop settings
+# Each crop requires a minimum garden level to farm
+crops:
+  wheat:
+    display_name: "Wheat"
+    required_garden_level: 1
+    upgrade_cost_base: 100
+    farming_xp_per_harvest: 4
+  carrot:
+    display_name: "Carrot"
+    required_garden_level: 1
+    upgrade_cost_base: 100
+    farming_xp_per_harvest: 4
+  potato:
+    display_name: "Potato"
+    required_garden_level: 1
+    upgrade_cost_base: 100
+    farming_xp_per_harvest: 4
+  pumpkin:
+    display_name: "Pumpkin"
+    required_garden_level: 2
+    upgrade_cost_base: 150
+    farming_xp_per_harvest: 5
+  melon:
+    display_name: "Melon"
+    required_garden_level: 2
+    upgrade_cost_base: 150
+    farming_xp_per_harvest: 5
+  cocoa_beans:
+    display_name: "Cocoa Beans"
+    required_garden_level: 3
+    upgrade_cost_base: 200
+    farming_xp_per_harvest: 3
+  cactus:
+    display_name: "Cactus"
+    required_garden_level: 3
+    upgrade_cost_base: 200
+    farming_xp_per_harvest: 2
+  sugar_cane:
+    display_name: "Sugar Cane"
+    required_garden_level: 4
+    upgrade_cost_base: 250
+    farming_xp_per_harvest: 4
+  nether_wart:
+    display_name: "Nether Wart"
+    required_garden_level: 5
+    upgrade_cost_base: 300
+    farming_xp_per_harvest: 4
+  mushroom:
+    display_name: "Mushroom"
+    required_garden_level: 6
+    upgrade_cost_base: 350
+    farming_xp_per_harvest: 3
+
+# Crop upgrade settings
+# Each upgrade gives +5 Farming Fortune
+upgrades:
+  max_level: 9
+  fortune_per_level: 5
+  # Cost multiplier per level (base_cost * (1 + level * multiplier))
+  cost_multiplier: 0.5
+
+# Milestone settings
+milestones:
+  # Tier requirements (amount needed for each tier)
+  tier_requirements:
+    1: 100
+    2: 500
+    3: 1500
+    4: 5000
+    5: 15000
+    6: 50000
+    7: 150000
+    8: 500000
+    9: 1500000
+    10: 5000000
+  # XP reward per tier
+  garden_xp_per_tier: 50
+  farming_xp_per_tier: 100
+
+# Plot unlock costs (in compost)
+plots:
+  base_cost: 100
+  cost_increase_per_plot: 50
+
+# Visitor settings (NPCs that appear in garden)
+visitors:
+  # Enable garden visitors
+  enabled: true
+  # Minutes between visitor spawn attempts
+  spawn_interval_minutes: 10
+  # Maximum active visitors at once
+  max_active_visitors: 3
+  # Visitor request timeout in minutes
+  request_timeout_minutes: 30
+  # Chance for visitor to spawn (0.0 - 1.0)
+  spawn_chance: 0.3
+  # Copper reward multiplier
+  copper_reward_multiplier: 2
+
+# SkyMart settings (garden shop)
+skymart:
+  enabled: true
+  # Items available for purchase with copper
+  items:
+    farming_hoe:
+      cost: 500
+      item: "DIAMOND_HOE"
+    compost_bundle:
+      cost: 1000
+      compost_amount: 100

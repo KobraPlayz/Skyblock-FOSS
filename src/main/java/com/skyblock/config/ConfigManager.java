@@ -28,6 +28,11 @@ public class ConfigManager {
     public static final String COLLECTIONS = "collections";
     public static final String ITEMS = "items";
     public static final String MESSAGES = "messages";
+    // Phase 1.5 configs
+    public static final String ISLANDS = "islands";
+    public static final String GARDEN = "garden";
+    public static final String FURNITURE = "furniture";
+    public static final String WORLDS = "worlds";
 
     public ConfigManager(SkyblockPlugin plugin) {
         this.plugin = plugin;
@@ -46,6 +51,11 @@ public class ConfigManager {
         saveDefaultConfig(COLLECTIONS);
         saveDefaultConfig(ITEMS);
         saveDefaultConfig(MESSAGES);
+        // Phase 1.5 configs
+        saveDefaultConfig(ISLANDS);
+        saveDefaultConfig(GARDEN);
+        saveDefaultConfig(FURNITURE);
+        saveDefaultConfig(WORLDS);
 
         // Load all configs
         loadConfig(CONFIG);
@@ -54,6 +64,11 @@ public class ConfigManager {
         loadConfig(COLLECTIONS);
         loadConfig(ITEMS);
         loadConfig(MESSAGES);
+        // Phase 1.5 configs
+        loadConfig(ISLANDS);
+        loadConfig(GARDEN);
+        loadConfig(FURNITURE);
+        loadConfig(WORLDS);
 
         plugin.log(Level.INFO, "Loaded " + configs.size() + " configuration files.");
     }
@@ -164,6 +179,34 @@ public class ConfigManager {
      */
     public FileConfiguration getMessagesConfig() {
         return configs.get(MESSAGES);
+    }
+
+    /**
+     * Get the islands config.
+     */
+    public FileConfiguration getIslandsConfig() {
+        return configs.get(ISLANDS);
+    }
+
+    /**
+     * Get the garden config.
+     */
+    public FileConfiguration getGardenConfig() {
+        return configs.get(GARDEN);
+    }
+
+    /**
+     * Get the furniture config.
+     */
+    public FileConfiguration getFurnitureConfig() {
+        return configs.get(FURNITURE);
+    }
+
+    /**
+     * Get the worlds config.
+     */
+    public FileConfiguration getWorldsConfig() {
+        return configs.get(WORLDS);
     }
 
     /**

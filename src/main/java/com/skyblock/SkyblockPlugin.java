@@ -3,15 +3,21 @@ package com.skyblock;
 import com.skyblock.api.SkyblockAPI;
 import com.skyblock.commands.*;
 import com.skyblock.config.ConfigManager;
+import com.skyblock.coop.CoopManager;
 import com.skyblock.database.DatabaseManager;
 import com.skyblock.economy.EconomyManager;
 import com.skyblock.collections.CollectionManager;
+import com.skyblock.furniture.FurnitureManager;
+import com.skyblock.garden.GardenManager;
 import com.skyblock.gui.GUIManager;
+import com.skyblock.island.IslandManager;
+import com.skyblock.island.IslandProtectionListener;
 import com.skyblock.items.ItemManager;
 import com.skyblock.modules.ModuleManager;
 import com.skyblock.player.PlayerManager;
 import com.skyblock.skills.SkillManager;
 import com.skyblock.utils.ColorUtils;
+import com.skyblock.world.WorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -45,6 +51,13 @@ public class SkyblockPlugin extends JavaPlugin {
     private CollectionManager collectionManager;
     private EconomyManager economyManager;
     private GUIManager guiManager;
+
+    // Phase 1.5 Managers
+    private WorldManager worldManager;
+    private IslandManager islandManager;
+    private CoopManager coopManager;
+    private GardenManager gardenManager;
+    private FurnitureManager furnitureManager;
 
     // API
     private SkyblockAPI api;
@@ -84,6 +97,14 @@ public class SkyblockPlugin extends JavaPlugin {
             economyManager = new EconomyManager(this);
             guiManager = new GUIManager(this);
 
+            // Initialize Phase 1.5 managers
+            log(Level.INFO, "Initializing Phase 1.5 managers (Island, Garden, World)...");
+            worldManager = new WorldManager(this);
+            islandManager = new IslandManager(this);
+            coopManager = new CoopManager(this);
+            gardenManager = new GardenManager(this);
+            furnitureManager = new FurnitureManager(this);
+
             // Initialize API
             api = new SkyblockAPI(this);
 
@@ -106,7 +127,7 @@ public class SkyblockPlugin extends JavaPlugin {
 
             log(Level.INFO, "");
             log(Level.INFO, ColorUtils.colorize("&a&lSkyblockFOSS has been enabled successfully!"));
-            log(Level.INFO, ColorUtils.colorize("&7Phase 1 - Core Foundation"));
+            log(Level.INFO, ColorUtils.colorize("&7Phase 1.5 - Islands, Gardens & Worlds"));
             log(Level.INFO, "");
 
         } catch (Exception e) {
@@ -123,6 +144,20 @@ public class SkyblockPlugin extends JavaPlugin {
         // Save all player data
         if (playerManager != null) {
             Bukkit.getOnlinePlayers().forEach(player -> playerManager.savePlayer(player.getUniqueId()));
+        }
+
+        // Shutdown Phase 1.5 managers
+        if (worldManager != null) {
+            worldManager.shutdown();
+        }
+        if (islandManager != null) {
+            islandManager.shutdown();
+        }
+        if (gardenManager != null) {
+            gardenManager.shutdown();
+        }
+        if (furnitureManager != null) {
+            furnitureManager.shutdown();
         }
 
         // Close database connections
@@ -148,7 +183,7 @@ public class SkyblockPlugin extends JavaPlugin {
         getLogger().info(" ____) |   <| |_| | |_) | | (_) | (__|   < ");
         getLogger().info("|_____/|_|\\_\\\\__, |_.__/|_|\\___/ \\___|_|\\_\\");
         getLogger().info("              __/ |  FOSS v" + getDescription().getVersion());
-        getLogger().info("             |___/   Phase 1 - Core Foundation");
+        getLogger().info("             |___/   Phase 1.5 - Islands & Worlds");
         getLogger().info("");
     }
 
@@ -160,6 +195,18 @@ public class SkyblockPlugin extends JavaPlugin {
         getCommand("sbadmin").setExecutor(new AdminCommand(this));
         getCommand("coins").setExecutor(new CoinsCommand(this));
         getCommand("shop").setExecutor(new ShopCommand(this));
+
+        // Phase 1.5 commands
+        IslandCommand islandCommand = new IslandCommand(this);
+        getCommand("island").setExecutor(islandCommand);
+        getCommand("is").setExecutor(islandCommand);
+        getCommand("visit").setExecutor(new VisitCommand(this));
+        getCommand("hub").setExecutor(new HubCommand(this));
+        getCommand("coopadd").setExecutor(new CoopCommand(this));
+        getCommand("coopkick").setExecutor(new CoopCommand(this));
+        getCommand("coopview").setExecutor(new CoopCommand(this));
+        getCommand("coopsalvage").setExecutor(new CoopCommand(this));
+        getCommand("coopleave").setExecutor(new CoopCommand(this));
     }
 
     private void registerListeners() {
@@ -181,6 +228,11 @@ public class SkyblockPlugin extends JavaPlugin {
         if (moduleManager.isModuleEnabled("collections")) {
             collectionManager.registerListeners();
         }
+
+        // Phase 1.5 listeners
+        getServer().getPluginManager().registerEvents(new IslandProtectionListener(this), this);
+        getServer().getPluginManager().registerEvents(furnitureManager, this);
+        getServer().getPluginManager().registerEvents(gardenManager, this);
     }
 
     private void setupHooks() {
@@ -272,5 +324,26 @@ public class SkyblockPlugin extends JavaPlugin {
 
     public SkyblockAPI getAPI() {
         return api;
+    }
+
+    // Phase 1.5 Getters
+    public WorldManager getWorldManager() {
+        return worldManager;
+    }
+
+    public IslandManager getIslandManager() {
+        return islandManager;
+    }
+
+    public CoopManager getCoopManager() {
+        return coopManager;
+    }
+
+    public GardenManager getGardenManager() {
+        return gardenManager;
+    }
+
+    public FurnitureManager getFurnitureManager() {
+        return furnitureManager;
     }
 }
