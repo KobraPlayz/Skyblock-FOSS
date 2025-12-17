@@ -43,6 +43,41 @@ commands:
     description: Open the shop menu
     permission: skyblock.shop
 
+  # Phase 1.5 Commands
+  island:
+    description: Manage your private island
+    aliases: [is]
+    permission: skyblock.island
+
+  visit:
+    description: Visit another player's island
+    permission: skyblock.visit
+
+  hub:
+    description: Teleport to the hub world
+    aliases: [spawn, lobby]
+    permission: skyblock.hub
+
+  coopadd:
+    description: Invite a player to your co-op island
+    permission: skyblock.coop
+
+  coopkick:
+    description: Start a vote to kick a co-op member
+    permission: skyblock.coop
+
+  coopview:
+    description: View your co-op members
+    permission: skyblock.coop
+
+  coopsalvage:
+    description: Salvage your co-op (owner only)
+    permission: skyblock.coop
+
+  coopleave:
+    description: Leave your co-op island
+    permission: skyblock.coop
+
 permissions:
   skyblock.*:
     description: All Skyblock permissions
@@ -59,6 +94,12 @@ permissions:
       skyblock.admin.players: true
       skyblock.admin.economy: true
       skyblock.admin.reload: true
+      # Phase 1.5
+      skyblock.island: true
+      skyblock.visit: true
+      skyblock.hub: true
+      skyblock.coop: true
+      skyblock.garden: true
 
   skyblock.menu:
     description: Access the Skyblock menu
@@ -103,3 +144,24 @@ permissions:
   skyblock.admin.reload:
     description: Reload configuration
     default: op
+
+  # Phase 1.5 Permissions
+  skyblock.island:
+    description: Access island commands
+    default: true
+
+  skyblock.visit:
+    description: Visit other players' islands
+    default: true
+
+  skyblock.hub:
+    description: Teleport to hub
+    default: true
+
+  skyblock.coop:
+    description: Access co-op features
+    default: true
+
+  skyblock.garden:
+    description: Access garden features
+    default: true

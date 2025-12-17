@@ -28,7 +28,7 @@ public class DatabaseManager {
     private boolean isMysql;
 
     // Schema version for migrations
-    private static final int SCHEMA_VERSION = 1;
+    private static final int SCHEMA_VERSION = 2;
 
     public DatabaseManager(SkyblockPlugin plugin) {
         this.plugin = plugin;
@@ -406,6 +406,209 @@ public class DatabaseManager {
                     UNIQUE(event_id, profile_id)
                 )
             """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // =====================================================
+            // PHASE 1.5 TABLES (Island, Garden, Co-op, Furniture)
+            // =====================================================
+
+            // Islands table
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS islands (
+                    id VARCHAR(36) PRIMARY KEY,
+                    profile_id INTEGER NOT NULL UNIQUE,
+                    world_name VARCHAR(64) NOT NULL,
+                    spawn_x DOUBLE DEFAULT 0,
+                    spawn_y DOUBLE DEFAULT 100,
+                    spawn_z DOUBLE DEFAULT 0,
+                    spawn_yaw FLOAT DEFAULT 0,
+                    spawn_pitch FLOAT DEFAULT 0,
+                    size INT DEFAULT 160,
+                    created_at BIGINT NOT NULL,
+                    last_accessed BIGINT NOT NULL,
+                    is_public BOOLEAN DEFAULT FALSE,
+                    pvp_enabled BOOLEAN DEFAULT FALSE,
+                    guest_limit INT DEFAULT 5,
+                    FOREIGN KEY (profile_id) REFERENCES profiles(id) ON DELETE CASCADE
+                )
+            """);
+
+            // Island members table (for co-op)
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS island_members (
+                    id INTEGER PRIMARY KEY %s,
+                    island_id VARCHAR(36) NOT NULL,
+                    player_uuid VARCHAR(36) NOT NULL,
+                    role VARCHAR(16) NOT NULL DEFAULT 'MEMBER',
+                    joined_at BIGINT NOT NULL,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE,
+                    UNIQUE(island_id, player_uuid)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Island settings table
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS island_settings (
+                    id INTEGER PRIMARY KEY %s,
+                    island_id VARCHAR(36) NOT NULL,
+                    setting_key VARCHAR(64) NOT NULL,
+                    setting_value TEXT,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE,
+                    UNIQUE(island_id, setting_key)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Island visitors log
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS island_visitors (
+                    id INTEGER PRIMARY KEY %s,
+                    island_id VARCHAR(36) NOT NULL,
+                    visitor_uuid VARCHAR(36) NOT NULL,
+                    visit_count INT DEFAULT 1,
+                    total_time_seconds BIGINT DEFAULT 0,
+                    last_visit BIGINT NOT NULL,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE,
+                    UNIQUE(island_id, visitor_uuid)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Island banned players
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS island_bans (
+                    id INTEGER PRIMARY KEY %s,
+                    island_id VARCHAR(36) NOT NULL,
+                    banned_uuid VARCHAR(36) NOT NULL,
+                    banned_by VARCHAR(36) NOT NULL,
+                    banned_at BIGINT NOT NULL,
+                    reason TEXT,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE,
+                    UNIQUE(island_id, banned_uuid)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Co-op invites table
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS coop_invites (
+                    id INTEGER PRIMARY KEY %s,
+                    island_id VARCHAR(36) NOT NULL,
+                    inviter_uuid VARCHAR(36) NOT NULL,
+                    invitee_uuid VARCHAR(36) NOT NULL,
+                    invited_at BIGINT NOT NULL,
+                    expires_at BIGINT NOT NULL,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Co-op kick votes
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS coop_kick_votes (
+                    id INTEGER PRIMARY KEY %s,
+                    island_id VARCHAR(36) NOT NULL,
+                    target_uuid VARCHAR(36) NOT NULL,
+                    voter_uuid VARCHAR(36) NOT NULL,
+                    voted_at BIGINT NOT NULL,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE,
+                    UNIQUE(island_id, target_uuid, voter_uuid)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Gardens table
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS gardens (
+                    id VARCHAR(36) PRIMARY KEY,
+                    profile_id INTEGER NOT NULL UNIQUE,
+                    world_name VARCHAR(64),
+                    garden_level INT DEFAULT 1,
+                    garden_xp DOUBLE DEFAULT 0,
+                    copper_balance BIGINT DEFAULT 0,
+                    compost_balance BIGINT DEFAULT 0,
+                    unlocked_at BIGINT NOT NULL,
+                    FOREIGN KEY (profile_id) REFERENCES profiles(id) ON DELETE CASCADE
+                )
+            """);
+
+            // Garden plots table
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS garden_plots (
+                    id INTEGER PRIMARY KEY %s,
+                    garden_id VARCHAR(36) NOT NULL,
+                    plot_number INT NOT NULL,
+                    unlocked BOOLEAN DEFAULT FALSE,
+                    cleaned BOOLEAN DEFAULT FALSE,
+                    preset_type VARCHAR(32),
+                    crop_type VARCHAR(32),
+                    FOREIGN KEY (garden_id) REFERENCES gardens(id) ON DELETE CASCADE,
+                    UNIQUE(garden_id, plot_number)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Garden crop upgrades
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS garden_crop_upgrades (
+                    id INTEGER PRIMARY KEY %s,
+                    garden_id VARCHAR(36) NOT NULL,
+                    crop_type VARCHAR(32) NOT NULL,
+                    upgrade_level INT DEFAULT 0,
+                    FOREIGN KEY (garden_id) REFERENCES gardens(id) ON DELETE CASCADE,
+                    UNIQUE(garden_id, crop_type)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Garden milestones
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS garden_milestones (
+                    id INTEGER PRIMARY KEY %s,
+                    garden_id VARCHAR(36) NOT NULL,
+                    crop_type VARCHAR(32) NOT NULL,
+                    amount_farmed BIGINT DEFAULT 0,
+                    milestone_tier INT DEFAULT 0,
+                    FOREIGN KEY (garden_id) REFERENCES gardens(id) ON DELETE CASCADE,
+                    UNIQUE(garden_id, crop_type)
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Garden visitors (NPCs)
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS garden_visitors (
+                    id INTEGER PRIMARY KEY %s,
+                    garden_id VARCHAR(36) NOT NULL,
+                    visitor_type VARCHAR(64) NOT NULL,
+                    request_item VARCHAR(64) NOT NULL,
+                    request_amount INT NOT NULL,
+                    reward_copper BIGINT DEFAULT 0,
+                    reward_items_json TEXT,
+                    spawned_at BIGINT NOT NULL,
+                    expires_at BIGINT NOT NULL,
+                    completed BOOLEAN DEFAULT FALSE,
+                    FOREIGN KEY (garden_id) REFERENCES gardens(id) ON DELETE CASCADE
+                )
+            """.formatted(isMysql ? "AUTO_INCREMENT" : "AUTOINCREMENT"));
+
+            // Furniture placements table
+            execute(conn, """
+                CREATE TABLE IF NOT EXISTS furniture (
+                    id VARCHAR(36) PRIMARY KEY,
+                    island_id VARCHAR(36) NOT NULL,
+                    furniture_type VARCHAR(64) NOT NULL,
+                    x DOUBLE NOT NULL,
+                    y DOUBLE NOT NULL,
+                    z DOUBLE NOT NULL,
+                    yaw FLOAT DEFAULT 0,
+                    data_json TEXT,
+                    placed_at BIGINT NOT NULL,
+                    placed_by VARCHAR(36) NOT NULL,
+                    FOREIGN KEY (island_id) REFERENCES islands(id) ON DELETE CASCADE
+                )
+            """);
+
+            // Create indexes for Phase 1.5 tables
+            if (isMysql) {
+                execute(conn, "CREATE INDEX IF NOT EXISTS idx_islands_profile ON islands(profile_id)");
+                execute(conn, "CREATE INDEX IF NOT EXISTS idx_island_members_island ON island_members(island_id)");
+                execute(conn, "CREATE INDEX IF NOT EXISTS idx_island_visitors_island ON island_visitors(island_id)");
+                execute(conn, "CREATE INDEX IF NOT EXISTS idx_gardens_profile ON gardens(profile_id)");
+                execute(conn, "CREATE INDEX IF NOT EXISTS idx_garden_plots_garden ON garden_plots(garden_id)");
+                execute(conn, "CREATE INDEX IF NOT EXISTS idx_furniture_island ON furniture(island_id)");
+            }
 
             plugin.log(Level.INFO, "Database tables created successfully.");
         }

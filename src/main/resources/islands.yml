@@ -1,0 +1,93 @@
+# Island Configuration
+# SkyblockFOSS Phase 1.5
+
+islands:
+  # Default island size (blocks)
+  default_size: 160
+  # Maximum island size after upgrades
+  max_size: 240
+  # Allow PvP on islands by default
+  allow_pvp: false
+  # Islands are private by default
+  default_public: false
+  # Default guest limit
+  guest_limit_default: 5
+  # Minutes before an island world is unloaded (when empty)
+  auto_unload_minutes: 10
+  # Template world to copy for new islands
+  template_world_name: "island_template"
+  # Maximum number of islands loaded at once
+  max_loaded_islands: 50
+
+# Co-op settings
+coop:
+  # Default maximum members per island
+  max_members_default: 5
+  # Maximum members after upgrade (600 gems on Hypixel)
+  max_members_upgraded: 8
+  # Invite expiration time in minutes
+  invite_expire_minutes: 5
+  # Kick vote expiration time in minutes
+  kick_vote_expire_minutes: 10
+  # Hours to salvage items from kicked member
+  salvage_time_hours: 36
+
+# Visitor settings
+visitors:
+  # Enable social skill XP from visitors
+  enable_social_xp: true
+  # XP gained when a visitor arrives
+  xp_per_visit: 5
+  # XP gained per minute visitor stays
+  xp_per_minute: 1
+  # Maximum visitors tracking history per island
+  max_visitor_history: 100
+
+# Island upgrades (purchased with coins or special currency)
+upgrades:
+  enabled: true
+  size_upgrades:
+    1:
+      size: 168
+      cost: 500000
+    2:
+      size: 176
+      cost: 1000000
+    3:
+      size: 184
+      cost: 2500000
+    4:
+      size: 192
+      cost: 5000000
+    5:
+      size: 200
+      cost: 10000000
+    6:
+      size: 216
+      cost: 25000000
+    7:
+      size: 232
+      cost: 50000000
+    8:
+      size: 240
+      cost: 100000000
+
+# Island border settings
+border:
+  # Show world border warning
+  show_warning: true
+  # Warning distance from edge
+  warning_distance: 10
+  # Damage when outside border
+  damage_outside: false
+
+# Protection settings
+protection:
+  # Prevent mob spawning on islands
+  disable_mob_spawning: false
+  # Prevent explosion damage
+  disable_explosions: true
+  # Prevent fire spread
+  disable_fire_spread: true
+  # Prevent leaf decay
+  disable_leaf_decay: false

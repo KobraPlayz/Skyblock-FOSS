@@ -1,0 +1,76 @@
+# World Configuration
+# SkyblockFOSS Phase 1.5
+
+worlds:
+  # Hub world settings
+  hub:
+    world_name: "world_hub"
+    spawn_x: 0.5
+    spawn_y: 100
+    spawn_z: 0.5
+    spawn_yaw: 0
+    spawn_pitch: 0
+
+  # Island world settings
+  islands:
+    # Use SlimeWorldManager for islands (more efficient)
+    # Set to false if SWM is not installed
+    use_slime_worlds: false
+    # Prefix for island world names
+    world_prefix: "island_"
+    # Template world to copy for new islands
+    template_world: "island_template"
+    # Minutes before inactive island is unloaded
+    auto_unload_minutes: 10
+    # Maximum concurrent loaded islands
+    max_loaded: 50
+
+  # Garden world settings
+  garden:
+    # Use separate worlds for each garden (more isolated)
+    # Set to false to use offset areas in island world
+    use_separate_worlds: false
+    # Prefix for garden world names
+    world_prefix: "garden_"
+    # Template world to copy for new gardens
+    template_world: "garden_template"
+
+# SlimeWorldManager settings (if enabled)
+slime_world_manager:
+  # Loader type: mysql, mongodb, file
+  loader: "file"
+  # MySQL settings (if using mysql loader)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "skyblock_worlds"
+    username: "root"
+    password: ""
+    # Table prefix for SWM data
+    table_prefix: "swm_"
+
+# World properties for generated worlds
+world_properties:
+  # Difficulty (PEACEFUL, EASY, NORMAL, HARD)
+  difficulty: HARD
+  # Allow PvP by default
+  pvp: false
+  # Spawn animals
+  spawn_animals: true
+  # Spawn monsters
+  spawn_monsters: true
+  # Allow weather
+  allow_weather: false
+  # Environment (NORMAL, NETHER, THE_END)
+  environment: NORMAL
+
+# Teleportation settings
+teleportation:
+  # Cooldown between teleports in seconds
+  cooldown_seconds: 3
+  # Combat tag duration in seconds (prevent teleporting during combat)
+  combat_tag_seconds: 10
+  # Show teleporting message
+  show_teleport_message: true
+  # Teleport warmup time in seconds (0 = instant)
+  warmup_seconds: 0

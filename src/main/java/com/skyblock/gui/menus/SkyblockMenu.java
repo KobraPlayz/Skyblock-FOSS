@@ -67,6 +67,27 @@ public class SkyblockMenu extends AbstractGUI {
             plugin.getGuiManager().openGUI(player, new ProfileMenu(plugin));
         });
 
+        // Phase 1.5 - Island button
+        setItem(28, new ItemBuilder(Material.GRASS_BLOCK)
+                .name("&a&lYour Island")
+                .lore(
+                        "&7Manage your private island!",
+                        "",
+                        "&7Build, farm, and invite friends",
+                        "&7to your personal SkyBlock island.",
+                        "",
+                        "&eClick to teleport!",
+                        "&eShift+Click for settings!"
+                )
+                .build(), event -> {
+            if (event.isShiftClick()) {
+                plugin.getGuiManager().openGUI(player, new IslandSettingsMenu(plugin, player.getUniqueId()));
+            } else {
+                player.closeInventory();
+                plugin.getIslandManager().teleportToIsland(player, player.getUniqueId());
+            }
+        });
+
         // Economy/Coins info
         setItem(30, new ItemBuilder(Material.GOLD_INGOT)
                 .name("&6&lPurse")
@@ -80,6 +101,23 @@ public class SkyblockMenu extends AbstractGUI {
                 )
                 .build(), event -> {
             // Show more economy info
+        });
+
+        // Phase 1.5 - Garden button
+        setItem(34, new ItemBuilder(Material.WHEAT)
+                .name("&2&lThe Garden")
+                .lore(
+                        "&7Your personal farming paradise!",
+                        "",
+                        "&7Grow crops, earn Copper, and",
+                        "&7unlock crop upgrades.",
+                        "",
+                        "&7Requires: &aSkyBlock Level 5",
+                        "",
+                        "&eClick to open!"
+                )
+                .build(), event -> {
+            plugin.getGuiManager().openGUI(player, new GardenMenu(plugin, player.getUniqueId()));
         });
 
         // Coming soon features (grayed out)

@@ -1,0 +1,134 @@
+# Furniture Configuration
+# SkyblockFOSS Phase 1.5
+
+furniture:
+  # Maximum furniture pieces per island
+  max_per_island: 15
+  # Allow functional furniture (Chest+, Enchanting Table+, etc.)
+  allow_functional: true
+
+# Furniture types
+types:
+  # Cosmetic furniture
+  tiki_torch:
+    display_name: "Tiki Torch"
+    category: COSMETIC
+    material: TORCH
+    craftable: true
+    recipe:
+      row1: ["STICK", "COAL", "STICK"]
+      row2: ["AIR", "STICK", "AIR"]
+      row3: ["AIR", "AIR", "AIR"]
+    cost: 100
+
+  decorative_skull:
+    display_name: "Decorative Skull"
+    category: COSMETIC
+    material: SKELETON_SKULL
+    craftable: true
+    recipe:
+      row1: ["BONE", "BONE", "BONE"]
+      row2: ["BONE", "SKELETON_SKULL", "BONE"]
+      row3: ["BONE", "BONE", "BONE"]
+    cost: 500
+
+  potted_plant:
+    display_name: "Potted Plant"
+    category: COSMETIC
+    material: POTTED_FERN
+    craftable: true
+    cost: 200
+
+  lantern:
+    display_name: "Lantern"
+    category: COSMETIC
+    material: LANTERN
+    craftable: true
+    cost: 150
+
+  campfire:
+    display_name: "Campfire"
+    category: COSMETIC
+    material: CAMPFIRE
+    craftable: true
+    cost: 250
+
+  banner:
+    display_name: "Banner"
+    category: COSMETIC
+    material: WHITE_BANNER
+    craftable: true
+    cost: 100
+
+  armor_display:
+    display_name: "Armor Display"
+    category: COSMETIC
+    material: ARMOR_STAND
+    craftable: true
+    cost: 300
+
+  painting:
+    display_name: "Painting"
+    category: COSMETIC
+    material: PAINTING
+    craftable: true
+    cost: 100
+
+  # Functional furniture
+  chest_plus:
+    display_name: "Chest+"
+    category: FUNCTIONAL
+    material: CHEST
+    craftable: true
+    extra_pages: 2
+    recipe:
+      row1: ["OAK_PLANKS", "OAK_PLANKS", "OAK_PLANKS"]
+      row2: ["OAK_PLANKS", "DIAMOND", "OAK_PLANKS"]
+      row3: ["OAK_PLANKS", "CHEST", "OAK_PLANKS"]
+    cost: 5000
+
+  enchanting_plus:
+    display_name: "Enchanting Table+"
+    category: FUNCTIONAL
+    material: ENCHANTING_TABLE
+    description: "Enchanting table with max bookshelves built in"
+    craftable: true
+    cost: 10000
+
+  crafting_plus:
+    display_name: "Crafting Table+"
+    category: FUNCTIONAL
+    material: CRAFTING_TABLE
+    description: "Quick access crafting table"
+    craftable: true
+    cost: 2500
+
+  anvil_plus:
+    display_name: "Anvil+"
+    category: FUNCTIONAL
+    material: ANVIL
+    description: "Anvil with reduced XP cost"
+    craftable: true
+    cost: 7500
+
+  furnace_plus:
+    display_name: "Furnace+"
+    category: FUNCTIONAL
+    material: FURNACE
+    description: "Faster smelting furnace"
+    craftable: true
+    cost: 5000
+
+  composter:
+    display_name: "Composter"
+    category: FUNCTIONAL
+    material: COMPOSTER
+    description: "Convert items to compost for the Garden"
+    craftable: true
+    cost: 3000
+
+# Carpentry settings (for crafting furniture)
+carpentry:
+  enabled: true
+  # Carpentry skill requirement for functional furniture
+  functional_level_requirement: 10

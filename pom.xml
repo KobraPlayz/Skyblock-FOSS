@@ -6,7 +6,7 @@
 
     <groupId>com.skyblock</groupId>
     <artifactId>SkyblockFOSS</artifactId>
-    <version>1.0.0-PHASE1</version>
+    <version>1.5.0-PHASE1.5</version>
     <packaging>jar</packaging>
 
     <name>SkyblockFOSS</name>
@@ -30,6 +30,15 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <!-- Advanced Slime World Manager -->
+        <repository>
+            <id>rapture-snapshots</id>
+            <url>https://repo.rapture.pw/repository/maven-snapshots/</url>
+        </repository>
+        <repository>
+            <id>infernal-suite</id>
+            <url>https://repo.infernalsuite.com/repository/maven-snapshots/</url>
         </repository>
     </repositories>
 
@@ -90,6 +99,22 @@
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
             <version>2.11.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Advanced Slime World Manager API (for island worlds) -->
+        <dependency>
+            <groupId>com.infernalsuite.aswm</groupId>
+            <artifactId>api</artifactId>
+            <version>1.20.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- WorldEdit API (for schematics/templates) -->
+        <dependency>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-bukkit</artifactId>
+            <version>7.2.18</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
