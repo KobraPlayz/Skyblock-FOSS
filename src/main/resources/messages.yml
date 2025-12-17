@@ -1,0 +1,236 @@
+# =====================================================
+# SkyblockFOSS Messages Configuration
+# All player-facing text for easy translation
+# =====================================================
+
+# Prefix for all messages
+prefix: "&6&lSKYBLOCK &8» &7"
+
+# General Messages
+general:
+  no-permission: "&cYou don't have permission to do this!"
+  player-only: "&cThis command can only be used by players!"
+  player-not-found: "&cPlayer &e{player} &cnot found!"
+  invalid-number: "&c{input} is not a valid number!"
+  invalid-amount: "&cInvalid amount! Must be between {min} and {max}."
+  feature-disabled: "&cThis feature is currently disabled!"
+  coming-soon: "&e&lCOMING SOON! &7This feature is not yet available."
+  cooldown: "&cPlease wait &e{time} &cbefore doing this again!"
+  error: "&cAn error occurred. Please try again later."
+
+# Profile Messages
+profile:
+  created: "&aProfile &e{name} &acreated successfully!"
+  deleted: "&cProfile &e{name} &chas been deleted."
+  switched: "&aYou are now playing on profile &e{name}&a!"
+  delete-confirm: "&c&lWARNING! &7Type &e/profile delete {name} confirm &7to delete this profile. &c&lThis cannot be undone!"
+  already-active: "&cThis profile is already active!"
+  max-profiles: "&cYou have reached the maximum number of profiles! ({max})"
+  name-taken: "&cYou already have a profile with this name!"
+  cannot-delete-last: "&cYou cannot delete your only profile!"
+  list-header: "&6&lYour Profiles:"
+  list-entry: "&7- &e{name} {active}"
+  list-active: "&a(Active)"
+
+# Economy Messages
+economy:
+  balance: "&7Purse: &6{amount} Coins"
+  receive: "&a+{amount} Coins"
+  spend: "&c-{amount} Coins"
+  not-enough: "&cYou don't have enough coins! You need &6{required} Coins&c."
+  max-coins: "&cYou've reached the maximum coin limit!"
+  transaction:
+    deposit: "&aDeposited &6{amount} Coins &ainto your bank."
+    withdraw: "&aWithdrew &6{amount} Coins &afrom your bank."
+
+# Shop Messages
+shop:
+  buy-success: "&aYou bought &e{amount}x {item} &afor &6{price} Coins&a!"
+  sell-success: "&aYou sold &e{amount}x {item} &afor &6{price} Coins&a!"
+  cannot-afford: "&cYou cannot afford this! Price: &6{price} Coins"
+  not-enough-items: "&cYou don't have enough &e{item}&c!"
+  inventory-full: "&cYour inventory is full!"
+
+# Skill Messages
+skills:
+  level-up: "&b&lSKILL LEVEL UP &3{skill} &8{prev_level}&7→&3{new_level}"
+  level-up-rewards: "&7  &8+&a{coins} Coins"
+  level-up-stat: "&7  &8+&b{amount} {stat}"
+  max-level: "&6&lMAX LEVEL REACHED!"
+  xp-gain: "&3+{xp} {skill} ({progress}%)"
+  skill-disabled: "&cThe {skill} skill is currently disabled!"
+
+# Collection Messages
+collections:
+  tier-unlock: "&a&lCOLLECTION LEVEL UP &7{collection} &8{prev}&7→&a{new}"
+  recipe-unlock: "&a&lRECIPE UNLOCKED! &e{recipe}"
+  trade-unlock: "&a&lTRADE UNLOCKED! &e{trade}"
+  progress: "&7Progress: &e{current}&7/&a{required} &8({percent}%)"
+  maxed: "&6&lCOLLECTION MAXED!"
+
+# Item Messages
+items:
+  ability:
+    cooldown: "&cThis ability is on cooldown for &e{time}&c!"
+    no-mana: "&cYou don't have enough Intelligence! Cost: &b{cost}"
+    activated: "&aAbility &e{name} &aactivated!"
+  reforge:
+    success: "&aItem reforged to &e{reforge}&a!"
+    already-reforged: "&cThis item already has a reforge!"
+    cannot-reforge: "&cThis item cannot be reforged!"
+
+# Admin Messages
+admin:
+  reload-success: "&aConfiguration reloaded successfully!"
+  reload-failed: "&cFailed to reload configuration!"
+  player-data-reset: "&aReset all data for player &e{player}&a!"
+  coins-given: "&aGave &6{amount} Coins &ato &e{player}&a!"
+  coins-taken: "&aRemoved &6{amount} Coins &afrom &e{player}&a!"
+  coins-set: "&aSet &e{player}'s &acoins to &6{amount}&a!"
+  skill-set: "&aSet &e{player}'s &3{skill} &ato level &b{level}&a!"
+  collection-set: "&aSet &e{player}'s &7{collection} &acollection to &e{amount}&a!"
+  item-given: "&aGave &e{item} &ato &e{player}&a!"
+
+# GUI Messages
+gui:
+  main-menu:
+    title: "&8SkyBlock Menu"
+    skills: "&a&lYour Skills"
+    skills-lore:
+      - "&7View all your Skills and"
+      - "&7their rewards!"
+      - ""
+      - "&eClick to view!"
+    collections: "&e&lCollections"
+    collections-lore:
+      - "&7View all of the items available"
+      - "&7in SkyBlock. Collect more to unlock"
+      - "&7awesome rewards!"
+      - ""
+      - "&eClick to view!"
+    recipe-book: "&d&lRecipe Book"
+    recipe-book-lore:
+      - "&7Through your adventures, you will"
+      - "&7unlock special recipes which can"
+      - "&7be viewed here!"
+      - ""
+      - "&eClick to view!"
+    profile: "&b&lProfile Management"
+    profile-lore:
+      - "&7Manage your Skyblock profiles."
+      - ""
+      - "&7Current: &e{profile}"
+      - ""
+      - "&eClick to manage!"
+    settings: "&7&lSettings"
+    settings-lore:
+      - "&7Customize your Skyblock"
+      - "&7experience."
+      - ""
+      - "&eClick to configure!"
+    admin: "&c&lAdmin Panel"
+    admin-lore:
+      - "&7Access administrator tools."
+      - ""
+      - "&eClick to open!"
+
+  skills-menu:
+    title: "&8Your Skills"
+    skill-lore:
+      - "&7Level: &e{level}&7/&a{max}"
+      - "&7Progress: &e{progress}%"
+      - ""
+      - "&7XP: &b{current_xp}&7/&a{next_level_xp}"
+      - ""
+      - "&7Rewards:"
+      - "{rewards}"
+      - ""
+      - "&eClick for more info!"
+
+  collections-menu:
+    title: "&8Collections"
+    category-title: "&8{category} Collections"
+    collection-lore:
+      - "&7Tier: &e{tier}"
+      - "&7Progress: &e{current}&7/&a{next}"
+      - ""
+      - "&7Total Collected: &e{total}"
+      - ""
+      - "&eClick for rewards!"
+
+  profile-menu:
+    title: "&8Profile Management"
+    profile-item: "&a&l{name}"
+    profile-lore:
+      - ""
+      - "&7Skills Average: &e{skill_avg}"
+      - "&7Purse: &6{purse}"
+      - ""
+      - "{status}"
+      - ""
+      - "&eClick to switch!"
+    create-profile: "&a&lCreate New Profile"
+    create-lore:
+      - "&7Create a new SkyBlock"
+      - "&7profile to start fresh!"
+      - ""
+      - "&7Profiles: &e{current}&7/&a{max}"
+      - ""
+      - "&eClick to create!"
+    delete-profile: "&c&lDelete Profile"
+    delete-lore:
+      - "&7Delete one of your profiles."
+      - "&cThis cannot be undone!"
+      - ""
+      - "&eClick to delete!"
+
+  shop-menu:
+    title: "&8{shop} Shop"
+    buy-lore:
+      - ""
+      - "&7Price: &6{price} Coins"
+      - ""
+      - "&eLeft-click to buy 1!"
+      - "&eRight-click to buy 64!"
+    sell-lore:
+      - ""
+      - "&7Sell Price: &6{price} Coins"
+      - ""
+      - "&eLeft-click to sell 1!"
+      - "&eRight-click to sell all!"
+
+  admin-menu:
+    title: "&8Admin Panel"
+    player-management: "&a&lPlayer Management"
+    player-management-lore:
+      - "&7Manage player data, skills,"
+      - "&7collections, and economy."
+      - ""
+      - "&eClick to open!"
+    item-spawner: "&e&lItem Spawner"
+    item-spawner-lore:
+      - "&7Spawn custom Skyblock items."
+      - ""
+      - "&eClick to open!"
+    server-management: "&b&lServer Management"
+    server-management-lore:
+      - "&7Reload configs, view metrics,"
+      - "&7and manage modules."
+      - ""
+      - "&eClick to open!"
+
+# Misc
+misc:
+  yes: "&aYes"
+  no: "&cNo"
+  enabled: "&aEnabled"
+  disabled: "&cDisabled"
+  back: "&cBack"
+  close: "&cClose"
+  next-page: "&aNext Page →"
+  prev-page: "&c← Previous Page"
+  page: "&7Page {current}/{total}"
+  click-to-select: "&eClick to select!"
+  shift-click: "&eShift-click for more options!"
+  loading: "&7Loading..."
+  none: "&7None"

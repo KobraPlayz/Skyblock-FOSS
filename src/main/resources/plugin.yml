@@ -1,0 +1,105 @@
+name: SkyblockFOSS
+version: ${project.version}
+main: com.skyblock.SkyblockPlugin
+api-version: '1.20'
+description: A comprehensive Hypixel Skyblock recreation plugin
+author: SkyblockFOSS Team
+website: https://github.com/skyblock-foss
+
+softdepend:
+  - Vault
+  - PlaceholderAPI
+
+commands:
+  skyblock:
+    description: Open the main Skyblock menu
+    aliases: [sb, sbmenu]
+    permission: skyblock.menu
+
+  skills:
+    description: View your skills
+    permission: skyblock.skills
+
+  collections:
+    description: View your collections
+    aliases: [col, collection]
+    permission: skyblock.collections
+
+  profile:
+    description: Manage your profiles
+    aliases: [profiles]
+    permission: skyblock.profile
+
+  sbadmin:
+    description: Admin commands for Skyblock
+    aliases: [sba]
+    permission: skyblock.admin
+
+  coins:
+    description: View or manage coins
+    permission: skyblock.coins
+
+  shop:
+    description: Open the shop menu
+    permission: skyblock.shop
+
+permissions:
+  skyblock.*:
+    description: All Skyblock permissions
+    default: op
+    children:
+      skyblock.menu: true
+      skyblock.skills: true
+      skyblock.collections: true
+      skyblock.profile: true
+      skyblock.coins: true
+      skyblock.shop: true
+      skyblock.admin: true
+      skyblock.admin.items: true
+      skyblock.admin.players: true
+      skyblock.admin.economy: true
+      skyblock.admin.reload: true
+
+  skyblock.menu:
+    description: Access the Skyblock menu
+    default: true
+
+  skyblock.skills:
+    description: View skills
+    default: true
+
+  skyblock.collections:
+    description: View collections
+    default: true
+
+  skyblock.profile:
+    description: Manage profiles
+    default: true
+
+  skyblock.coins:
+    description: View coins
+    default: true
+
+  skyblock.shop:
+    description: Access shops
+    default: true
+
+  skyblock.admin:
+    description: Access admin features
+    default: op
+
+  skyblock.admin.items:
+    description: Spawn items
+    default: op
+
+  skyblock.admin.players:
+    description: Manage players
+    default: op
+
+  skyblock.admin.economy:
+    description: Manage economy
+    default: op
+
+  skyblock.admin.reload:
+    description: Reload configuration
+    default: op

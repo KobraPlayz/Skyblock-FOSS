@@ -1,0 +1,410 @@
+# =====================================================
+# SkyblockFOSS Skills Configuration
+# Based on Hypixel Skyblock mechanics
+# =====================================================
+
+# XP Requirements per level (cumulative)
+# These match Hypixel Skyblock's XP curve
+xp-requirements:
+  # Levels 1-50 (all skills)
+  1: 50
+  2: 175
+  3: 375
+  4: 675
+  5: 1175
+  6: 1925
+  7: 2925
+  8: 4425
+  9: 6425
+  10: 9925
+  11: 14925
+  12: 22425
+  13: 32425
+  14: 47425
+  15: 67425
+  16: 97425
+  17: 147425
+  18: 222425
+  19: 322425
+  20: 522425
+  21: 822425
+  22: 1222425
+  23: 1722425
+  24: 2322425
+  25: 3022425
+  26: 3822425
+  27: 4722425
+  28: 5722425
+  29: 6822425
+  30: 8022425
+  31: 9322425
+  32: 10722425
+  33: 12222425
+  34: 13822425
+  35: 15522425
+  36: 17322425
+  37: 19222425
+  38: 21222425
+  39: 23322425
+  40: 25522425
+  41: 27822425
+  42: 30222425
+  43: 32722425
+  44: 35322425
+  45: 38072425
+  46: 40972425
+  47: 44072425
+  48: 47472425
+  49: 51172425
+  50: 55172425
+  # Levels 51-60 (for skills that go to 60)
+  51: 59472425
+  52: 64072425
+  53: 68972425
+  54: 74172425
+  55: 79672425
+  56: 85472425
+  57: 91572425
+  58: 97972425
+  59: 104672425
+  60: 111672425
+
+# Skill Definitions
+skills:
+  mining:
+    display-name: "&b&lMining"
+    description: "Gain Mining XP by mining blocks"
+    max-level: 60
+    icon: DIAMOND_PICKAXE
+
+    # XP rewards per block
+    xp-sources:
+      STONE: 1
+      COBBLESTONE: 1
+      COAL_ORE: 5
+      DEEPSLATE_COAL_ORE: 6
+      IRON_ORE: 10
+      DEEPSLATE_IRON_ORE: 12
+      GOLD_ORE: 15
+      DEEPSLATE_GOLD_ORE: 18
+      DIAMOND_ORE: 25
+      DEEPSLATE_DIAMOND_ORE: 30
+      EMERALD_ORE: 30
+      DEEPSLATE_EMERALD_ORE: 36
+      LAPIS_ORE: 8
+      DEEPSLATE_LAPIS_ORE: 10
+      REDSTONE_ORE: 8
+      DEEPSLATE_REDSTONE_ORE: 10
+      NETHER_QUARTZ_ORE: 12
+      NETHER_GOLD_ORE: 10
+      ANCIENT_DEBRIS: 100
+      OBSIDIAN: 15
+      NETHERRACK: 1
+      END_STONE: 3
+      GLOWSTONE: 8
+
+    # Level rewards
+    level-rewards:
+      # Stat bonuses per level
+      per-level:
+        DEFENSE: 1
+        MINING_FORTUNE: 4
+      # Milestone rewards
+      milestones:
+        5:
+          message: "&aYou unlocked Mining Fortune I!"
+        10:
+          message: "&aYour pickaxe efficiency increased!"
+        25:
+          message: "&aYou unlocked Pristine I!"
+        50:
+          message: "&6&lMAX MINING LEVEL!"
+
+  farming:
+    display-name: "&a&lFarming"
+    description: "Gain Farming XP by harvesting crops"
+    max-level: 60
+    icon: GOLDEN_HOE
+
+    xp-sources:
+      WHEAT: 4
+      CARROTS: 4
+      POTATOES: 4
+      BEETROOTS: 4
+      MELON_SLICE: 1
+      PUMPKIN: 4.5
+      SUGAR_CANE: 4
+      COCOA_BEANS: 3
+      CACTUS: 3
+      NETHER_WART: 4
+      MUSHROOM_STEM: 3
+      RED_MUSHROOM: 2
+      BROWN_MUSHROOM: 2
+
+    level-rewards:
+      per-level:
+        HEALTH: 2
+        FARMING_FORTUNE: 4
+      milestones:
+        5:
+          message: "&aYou unlocked Farming Fortune I!"
+        25:
+          message: "&aYou can now participate in Jacob's Contests!"
+        50:
+          message: "&6&lMAX FARMING LEVEL!"
+
+  combat:
+    display-name: "&c&lCombat"
+    description: "Gain Combat XP by defeating mobs"
+    max-level: 60
+    icon: DIAMOND_SWORD
+
+    # XP per mob (base values, scales with mob HP)
+    xp-sources:
+      ZOMBIE: 8
+      SKELETON: 8
+      SPIDER: 8
+      CREEPER: 12
+      ENDERMAN: 20
+      BLAZE: 15
+      WITHER_SKELETON: 25
+      PIGLIN: 10
+      PIGLIN_BRUTE: 20
+      HOGLIN: 15
+      ZOGLIN: 15
+      PHANTOM: 10
+      DROWNED: 10
+      HUSK: 8
+      STRAY: 8
+      WITCH: 15
+      GUARDIAN: 12
+      ELDER_GUARDIAN: 50
+      WARDEN: 100
+      ENDER_DRAGON: 500
+      WITHER: 500
+
+    level-rewards:
+      per-level:
+        CRIT_CHANCE: 0.5
+        STRENGTH: 1
+      milestones:
+        5:
+          message: "&aYou unlocked Combat XP Boost I!"
+        10:
+          message: "&aYour critical strikes are more powerful!"
+        50:
+          message: "&6&lMAX COMBAT LEVEL!"
+
+  foraging:
+    display-name: "&2&lForaging"
+    description: "Gain Foraging XP by chopping trees"
+    max-level: 50
+    icon: JUNGLE_SAPLING
+
+    xp-sources:
+      OAK_LOG: 6
+      SPRUCE_LOG: 6
+      BIRCH_LOG: 6
+      JUNGLE_LOG: 6
+      ACACIA_LOG: 6
+      DARK_OAK_LOG: 6
+      MANGROVE_LOG: 6
+      CHERRY_LOG: 6
+      CRIMSON_STEM: 6
+      WARPED_STEM: 6
+
+    level-rewards:
+      per-level:
+        STRENGTH: 1
+        FORAGING_FORTUNE: 4
+      milestones:
+        5:
+          message: "&aYou unlocked Foraging Fortune I!"
+        25:
+          message: "&aYou can now use Treecapitator!"
+        50:
+          message: "&6&lMAX FORAGING LEVEL!"
+
+  fishing:
+    display-name: "&9&lFishing"
+    description: "Gain Fishing XP by catching fish"
+    max-level: 50
+    icon: FISHING_ROD
+
+    xp-sources:
+      COD: 20
+      SALMON: 25
+      TROPICAL_FISH: 30
+      PUFFERFISH: 35
+      SQUID: 15
+      INK_SAC: 10
+      LILY_PAD: 5
+      NAUTILUS_SHELL: 50
+
+    level-rewards:
+      per-level:
+        HEALTH: 2
+        SEA_CREATURE_CHANCE: 0.2
+      milestones:
+        5:
+          message: "&aYou unlocked Fishing Speed I!"
+        25:
+          message: "&aYou can now catch Sea Creatures!"
+        50:
+          message: "&6&lMAX FISHING LEVEL!"
+
+  enchanting:
+    display-name: "&d&lEnchanting"
+    description: "Gain Enchanting XP by enchanting items"
+    max-level: 60
+    icon: ENCHANTING_TABLE
+
+    # XP per enchantment level spent
+    xp-per-level: 150
+
+    # XP for experimenting
+    experimentation-xp:
+      superpairs: 300
+      chronomatron: 250
+      ultrasequencer: 200
+
+    level-rewards:
+      per-level:
+        INTELLIGENCE: 1
+        ABILITY_DAMAGE: 0.5
+      milestones:
+        10:
+          message: "&aYou can now add more enchants!"
+        25:
+          message: "&aYou unlocked Experimentation Table!"
+        50:
+          message: "&6&lMAX ENCHANTING LEVEL!"
+
+  alchemy:
+    display-name: "&5&lAlchemy"
+    description: "Gain Alchemy XP by brewing potions"
+    max-level: 50
+    icon: BREWING_STAND
+
+    # XP per potion brewed
+    xp-per-potion:
+      base: 10
+      extended: 15
+      enhanced: 20
+      splash: 25
+      lingering: 30
+
+    level-rewards:
+      per-level:
+        INTELLIGENCE: 1
+      milestones:
+        10:
+          message: "&aYour potions last longer!"
+        25:
+          message: "&aYou can brew advanced potions!"
+        50:
+          message: "&6&lMAX ALCHEMY LEVEL!"
+
+  runecrafting:
+    display-name: "&e&lRunecrafting"
+    description: "Gain Runecrafting XP by crafting runes"
+    max-level: 25
+    icon: MAGMA_CREAM
+
+    # This skill uses separate XP table
+    custom-xp-table: true
+
+    level-rewards:
+      per-level:
+        MAGIC_FIND: 0.2
+      milestones:
+        10:
+          message: "&aYou can craft advanced runes!"
+        25:
+          message: "&6&lMAX RUNECRAFTING LEVEL!"
+
+  social:
+    display-name: "&f&lSocial"
+    description: "Gain Social XP by playing with others"
+    max-level: 25
+    icon: CAKE
+    cosmetic: true
+
+    level-rewards:
+      per-level: {}
+      milestones:
+        10:
+          message: "&aYou're a social butterfly!"
+        25:
+          message: "&6&lMAX SOCIAL LEVEL!"
+
+  carpentry:
+    display-name: "&6&lCarpentry"
+    description: "Gain Carpentry XP by crafting items"
+    max-level: 50
+    icon: CRAFTING_TABLE
+    cosmetic: true
+
+    level-rewards:
+      per-level: {}
+      milestones:
+        10:
+          message: "&aYou're a skilled craftsman!"
+        50:
+          message: "&6&lMAX CARPENTRY LEVEL!"
+
+  taming:
+    display-name: "&d&lTaming"
+    description: "Gain Taming XP through pets (Phase 2)"
+    max-level: 50
+    icon: BONE
+
+    level-rewards:
+      per-level:
+        PET_LUCK: 1
+      milestones:
+        10:
+          message: "&aYour pets level faster!"
+        25:
+          message: "&aYou unlocked Pet Candy!"
+        50:
+          message: "&6&lMAX TAMING LEVEL!"
+
+# Global skill settings
+settings:
+  # Multipliers
+  multipliers:
+    # Global XP multiplier
+    global: 1.0
+
+    # Skill booster potions
+    skill-booster:
+      minor: 1.05
+      normal: 1.10
+      major: 1.20
+
+  # Skill messages
+  messages:
+    level-up: "&b&lSKILL LEVEL UP &3{skill} &8{prev_level}&7➜&3{new_level}"
+    xp-gain: "&3+{xp} {skill} XP"
+
+  # Action bar display
+  action-bar:
+    enabled: true
+    format: "&b{skill} &7{current_xp}/{next_level_xp} &8(&a{percent}%&8)"
+
+# Wisdom bonuses (increase XP gain)
+wisdom:
+  mining-wisdom:
+    description: "Increases Mining XP gain"
+    sources:
+      - "Mining skill levels"
+      - "Pet bonuses"
+      - "Accessories"
+
+  farming-wisdom:
+    description: "Increases Farming XP gain"
+    sources:
+      - "Farming skill levels"
+      - "Pet bonuses"
+      - "Accessories"

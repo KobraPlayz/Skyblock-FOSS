@@ -1,0 +1,145 @@
+# =====================================================
+# SkyblockFOSS Module Configuration
+# Enable/disable individual systems
+# =====================================================
+
+# All modules can be toggled on/off
+# When disabled, commands are blocked, menus hide the feature,
+# and listeners are unregistered
+
+modules:
+  # Skills System
+  skills:
+    enabled: true
+    # Individual skills can be disabled
+    individual:
+      mining: true
+      farming: true
+      combat: true
+      foraging: true
+      fishing: true
+      enchanting: true
+      alchemy: true
+      runecrafting: true
+      social: true
+      carpentry: true
+      taming: true
+
+  # Collections System
+  collections:
+    enabled: true
+    # Collection categories can be disabled
+    categories:
+      farming: true
+      mining: true
+      combat: true
+      foraging: true
+      fishing: true
+      boss: true
+
+  # Profile System
+  profiles:
+    enabled: true
+    # Allow multiple profiles
+    multiple-profiles: true
+
+  # Economy System
+  economy:
+    enabled: true
+    # NPC Shops
+    shops: true
+
+  # Custom Items
+  items:
+    enabled: true
+    # Item abilities
+    abilities: true
+    # Reforges
+    reforges: true
+    # Custom enchants
+    custom-enchants: true
+
+  # Admin Tools
+  admin:
+    enabled: true
+    # Admin GUI
+    admin-gui: true
+    # Player management
+    player-management: true
+    # Economy management
+    economy-management: true
+
+  # Effects
+  effects:
+    # Sounds
+    sounds: true
+    # Particles
+    particles: true
+
+# =====================================================
+# Phase 2 Modules (Coming Soon)
+# These will be disabled until Phase 2 implementation
+# =====================================================
+
+phase2:
+  pets:
+    enabled: false
+    show-coming-soon: true
+
+  accessories:
+    enabled: false
+    show-coming-soon: true
+
+  backpacks:
+    enabled: false
+    show-coming-soon: true
+
+  banking:
+    enabled: false
+    show-coming-soon: true
+
+# =====================================================
+# Phase 3 Modules (Coming Soon)
+# =====================================================
+
+phase3:
+  minions:
+    enabled: false
+    show-coming-soon: true
+
+  bazaar:
+    enabled: false
+    show-coming-soon: true
+
+  auction-house:
+    enabled: false
+    show-coming-soon: true
+
+  leaderboards:
+    enabled: false
+    show-coming-soon: true
+
+# =====================================================
+# Phase 4 Modules (Coming Soon)
+# =====================================================
+
+phase4:
+  dungeons:
+    enabled: false
+    show-coming-soon: true
+
+  slayers:
+    enabled: false
+    show-coming-soon: true
+
+  events:
+    enabled: false
+    show-coming-soon: true
+
+  quests:
+    enabled: false
+    show-coming-soon: true
+
+  fairy-souls:
+    enabled: false
+    show-coming-soon: true

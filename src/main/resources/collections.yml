@@ -1,0 +1,1175 @@
+# =====================================================
+# SkyblockFOSS Collections Configuration
+# Based on Hypixel Skyblock mechanics
+# =====================================================
+
+# Collection Categories
+categories:
+  farming:
+    display-name: "&a&lFarming"
+    icon: GOLDEN_HOE
+    description: "Farm crops to unlock rewards"
+
+  mining:
+    display-name: "&b&lMining"
+    icon: DIAMOND_PICKAXE
+    description: "Mine ores and stones to unlock rewards"
+
+  combat:
+    display-name: "&c&lCombat"
+    icon: DIAMOND_SWORD
+    description: "Defeat mobs to unlock rewards"
+
+  foraging:
+    display-name: "&2&lForaging"
+    icon: JUNGLE_SAPLING
+    description: "Chop trees to unlock rewards"
+
+  fishing:
+    display-name: "&9&lFishing"
+    icon: FISHING_ROD
+    description: "Catch fish to unlock rewards"
+
+  boss:
+    display-name: "&5&lBoss"
+    icon: WITHER_SKELETON_SKULL
+    description: "Defeat bosses to unlock rewards"
+
+# Collection Definitions
+collections:
+  # ==================== FARMING ====================
+  wheat:
+    category: farming
+    display-name: "&eWheat"
+    icon: WHEAT
+    skill-xp:
+      type: farming
+      amount: 4
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "WHEAT_MINION_I"
+            description: "&7Wheat Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_BREAD"
+            description: "&7Enchanted Bread Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "FARM_SUIT_HELMET"
+            description: "&7Farm Suit Helmet Recipe"
+          - type: recipe
+            item: "FARM_SUIT_CHESTPLATE"
+            description: "&7Farm Suit Chestplate Recipe"
+          - type: recipe
+            item: "FARM_SUIT_LEGGINGS"
+            description: "&7Farm Suit Leggings Recipe"
+          - type: recipe
+            item: "FARM_SUIT_BOOTS"
+            description: "&7Farm Suit Boots Recipe"
+      4:
+        requirement: 500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_HAY_BALE"
+            description: "&7Enchanted Hay Bale Recipe"
+      5:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "WHEAT_MINION_II"
+            description: "&7Wheat Minion II Recipe"
+      6:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "WHEAT_MINION_III"
+            description: "&7Wheat Minion III Recipe"
+      7:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "WHEAT_MINION_IV"
+            description: "&7Wheat Minion IV Recipe"
+      8:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "TIGHTLY_TIED_HAY_BALE"
+            description: "&7Tightly-Tied Hay Bale Recipe"
+      9:
+        requirement: 25000
+        rewards:
+          - type: recipe
+            item: "FARM_ARMOR"
+            description: "&7Full Farm Armor Set Recipe"
+      10:
+        requirement: 50000
+        rewards:
+          - type: recipe
+            item: "WHEAT_MINION_V"
+            description: "&7Wheat Minion V Recipe"
+      11:
+        requirement: 100000
+        rewards:
+          - type: recipe
+            item: "WHEAT_MINION_VI"
+            description: "&7Wheat Minion VI Recipe"
+
+  carrot:
+    category: farming
+    display-name: "&6Carrot"
+    icon: CARROT
+    skill-xp:
+      type: farming
+      amount: 4
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "CARROT_MINION_I"
+            description: "&7Carrot Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "SIMPLE_CARROT_CANDY"
+            description: "&7Simple Carrot Candy Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_CARROT"
+            description: "&7Enchanted Carrot Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_GOLDEN_CARROT"
+            description: "&7Enchanted Golden Carrot Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "SUPER_COMPACTOR_3000"
+            description: "&7Super Compactor 3000 Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "GREAT_CARROT_CANDY"
+            description: "&7Great Carrot Candy Recipe"
+      7:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "CARROT_MINION_V"
+            description: "&7Carrot Minion V Recipe"
+      8:
+        requirement: 25000
+        rewards:
+          - type: recipe
+            item: "SUPERB_CARROT_CANDY"
+            description: "&7Superb Carrot Candy Recipe"
+      9:
+        requirement: 50000
+        rewards:
+          - type: recipe
+            item: "ABSOLUTE_ENDER_PEARL"
+            description: "&7Absolute Ender Pearl Recipe"
+
+  potato:
+    category: farming
+    display-name: "&ePotato"
+    icon: POTATO
+    skill-xp:
+      type: farming
+      amount: 4
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "POTATO_MINION_I"
+            description: "&7Potato Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_POTATO"
+            description: "&7Enchanted Potato Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_BAKED_POTATO"
+            description: "&7Enchanted Baked Potato Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "HOT_POTATO_BOOK"
+            description: "&7Hot Potato Book Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "POTATO_TALISMAN"
+            description: "&7Potato Talisman Recipe"
+      6:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "POTATO_MINION_V"
+            description: "&7Potato Minion V Recipe"
+
+  melon:
+    category: farming
+    display-name: "&aMelon"
+    icon: MELON_SLICE
+    skill-xp:
+      type: farming
+      amount: 1
+    tiers:
+      1:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "MELON_MINION_I"
+            description: "&7Melon Minion I Recipe"
+      2:
+        requirement: 500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_MELON"
+            description: "&7Enchanted Melon Recipe"
+      3:
+        requirement: 1250
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_GLISTERING_MELON"
+            description: "&7Enchanted Glistering Melon Recipe"
+      4:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "MELON_MINION_IV"
+            description: "&7Melon Minion IV Recipe"
+      5:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "MELON_DICER"
+            description: "&7Melon Dicer Recipe"
+      6:
+        requirement: 25000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_MELON_BLOCK"
+            description: "&7Enchanted Melon Block Recipe"
+      7:
+        requirement: 50000
+        rewards:
+          - type: recipe
+            item: "MELON_MINION_VII"
+            description: "&7Melon Minion VII Recipe"
+      8:
+        requirement: 100000
+        rewards:
+          - type: recipe
+            item: "MELON_MINION_IX"
+            description: "&7Melon Minion IX Recipe"
+      9:
+        requirement: 250000
+        rewards:
+          - type: recipe
+            item: "MELON_ARMOR"
+            description: "&7Melon Armor Set Recipe"
+
+  pumpkin:
+    category: farming
+    display-name: "&6Pumpkin"
+    icon: PUMPKIN
+    skill-xp:
+      type: farming
+      amount: 4.5
+    tiers:
+      1:
+        requirement: 40
+        rewards:
+          - type: recipe
+            item: "PUMPKIN_MINION_I"
+            description: "&7Pumpkin Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_PUMPKIN"
+            description: "&7Enchanted Pumpkin Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "PUMPKIN_DICER"
+            description: "&7Pumpkin Dicer Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "POLISHED_PUMPKIN"
+            description: "&7Polished Pumpkin Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "RANCHERS_BOOTS"
+            description: "&7Rancher's Boots Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "PUMPKIN_MINION_V"
+            description: "&7Pumpkin Minion V Recipe"
+
+  sugar_cane:
+    category: farming
+    display-name: "&aSugar Cane"
+    icon: SUGAR_CANE
+    skill-xp:
+      type: farming
+      amount: 4
+    tiers:
+      1:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "SUGAR_CANE_MINION_I"
+            description: "&7Sugar Cane Minion I Recipe"
+      2:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_SUGAR"
+            description: "&7Enchanted Sugar Recipe"
+      3:
+        requirement: 500
+        rewards:
+          - type: recipe
+            item: "SPEED_TALISMAN"
+            description: "&7Speed Talisman Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_PAPER"
+            description: "&7Enchanted Paper Recipe"
+      5:
+        requirement: 2000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_SUGAR_CANE"
+            description: "&7Enchanted Sugar Cane Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "SUGAR_CANE_MINION_V"
+            description: "&7Sugar Cane Minion V Recipe"
+
+  # ==================== MINING ====================
+  cobblestone:
+    category: mining
+    display-name: "&7Cobblestone"
+    icon: COBBLESTONE
+    skill-xp:
+      type: mining
+      amount: 1
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "COBBLESTONE_MINION_I"
+            description: "&7Cobblestone Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_COBBLESTONE"
+            description: "&7Enchanted Cobblestone Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ROOKIE_PICKAXE"
+            description: "&7Rookie Pickaxe Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "COBBLESTONE_MINION_IV"
+            description: "&7Cobblestone Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "MINER_OUTFIT"
+            description: "&7Miner's Outfit Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "COBBLESTONE_MINION_VI"
+            description: "&7Cobblestone Minion VI Recipe"
+      7:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "AUTO_SMELTER"
+            description: "&7Auto Smelter Recipe"
+      8:
+        requirement: 25000
+        rewards:
+          - type: recipe
+            item: "COBBLESTONE_MINION_VIII"
+            description: "&7Cobblestone Minion VIII Recipe"
+      9:
+        requirement: 50000
+        rewards:
+          - type: recipe
+            item: "COMPACTOR"
+            description: "&7Compactor Recipe"
+
+  coal:
+    category: mining
+    display-name: "&8Coal"
+    icon: COAL
+    skill-xp:
+      type: mining
+      amount: 5
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "COAL_MINION_I"
+            description: "&7Coal Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_COAL"
+            description: "&7Enchanted Coal Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_CHARCOAL"
+            description: "&7Enchanted Charcoal Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "COAL_MINION_IV"
+            description: "&7Coal Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_COAL_BLOCK"
+            description: "&7Enchanted Coal Block Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "COAL_MINION_VI"
+            description: "&7Coal Minion VI Recipe"
+
+  iron:
+    category: mining
+    display-name: "&fIron"
+    icon: IRON_INGOT
+    skill-xp:
+      type: mining
+      amount: 10
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "IRON_MINION_I"
+            description: "&7Iron Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_IRON"
+            description: "&7Enchanted Iron Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "GOLEM_SWORD"
+            description: "&7Golem Sword Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "IRON_MINION_IV"
+            description: "&7Iron Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_IRON_BLOCK"
+            description: "&7Enchanted Iron Block Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "IRON_MINION_VI"
+            description: "&7Iron Minion VI Recipe"
+      7:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "GOLEM_ARMOR"
+            description: "&7Golem Armor Recipe"
+
+  gold:
+    category: mining
+    display-name: "&6Gold"
+    icon: GOLD_INGOT
+    skill-xp:
+      type: mining
+      amount: 15
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "GOLD_MINION_I"
+            description: "&7Gold Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_GOLD"
+            description: "&7Enchanted Gold Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "GOLD_MINION_III"
+            description: "&7Gold Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: trade
+            item: "BANK_UPGRADE_GOLD"
+            description: "&7Bank Account Upgrade"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_GOLD_BLOCK"
+            description: "&7Enchanted Gold Block Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "GOLD_MINION_VI"
+            description: "&7Gold Minion VI Recipe"
+
+  diamond:
+    category: mining
+    display-name: "&bDiamond"
+    icon: DIAMOND
+    skill-xp:
+      type: mining
+      amount: 25
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "DIAMOND_MINION_I"
+            description: "&7Diamond Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_DIAMOND"
+            description: "&7Enchanted Diamond Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "HARDENED_DIAMOND_ARMOR"
+            description: "&7Hardened Diamond Armor Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "DIAMOND_MINION_IV"
+            description: "&7Diamond Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "PERFECT_ARMOR_TIER_1"
+            description: "&7Perfect Armor Tier I Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_DIAMOND_BLOCK"
+            description: "&7Enchanted Diamond Block Recipe"
+      7:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "DIAMOND_SPREADING"
+            description: "&7Diamond Spreading Recipe"
+
+  redstone:
+    category: mining
+    display-name: "&cRedstone"
+    icon: REDSTONE
+    skill-xp:
+      type: mining
+      amount: 8
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "REDSTONE_MINION_I"
+            description: "&7Redstone Minion I Recipe"
+      2:
+        requirement: 250
+        rewards:
+          - type: unlock
+            item: "ACCESSORY_BAG_UPGRADE_1"
+            description: "&7Small Accessory Bag"
+      3:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_REDSTONE"
+            description: "&7Enchanted Redstone Recipe"
+      4:
+        requirement: 2500
+        rewards:
+          - type: unlock
+            item: "ACCESSORY_BAG_UPGRADE_2"
+            description: "&7Medium Accessory Bag"
+      5:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_REDSTONE_BLOCK"
+            description: "&7Enchanted Redstone Block Recipe"
+      6:
+        requirement: 10000
+        rewards:
+          - type: unlock
+            item: "ACCESSORY_BAG_UPGRADE_3"
+            description: "&7Large Accessory Bag"
+
+  lapis:
+    category: mining
+    display-name: "&9Lapis Lazuli"
+    icon: LAPIS_LAZULI
+    skill-xp:
+      type: mining
+      amount: 8
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "LAPIS_MINION_I"
+            description: "&7Lapis Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_LAPIS_LAZULI"
+            description: "&7Enchanted Lapis Lazuli Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "LAPIS_ARMOR"
+            description: "&7Lapis Armor Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "LAPIS_MINION_IV"
+            description: "&7Lapis Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_LAPIS_BLOCK"
+            description: "&7Enchanted Lapis Block Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "EXPERIENCE_ARTIFACT"
+            description: "&7Experience Artifact Recipe"
+
+  emerald:
+    category: mining
+    display-name: "&aEmerald"
+    icon: EMERALD
+    skill-xp:
+      type: mining
+      amount: 30
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "EMERALD_MINION_I"
+            description: "&7Emerald Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_EMERALD"
+            description: "&7Enchanted Emerald Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "EMERALD_RING"
+            description: "&7Emerald Ring Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "EMERALD_MINION_IV"
+            description: "&7Emerald Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_EMERALD_BLOCK"
+            description: "&7Enchanted Emerald Block Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: trade
+            item: "EMERALD_TRADE_UNLOCK"
+            description: "&7Trade Emeralds with NPCs"
+
+  # ==================== COMBAT ====================
+  rotten_flesh:
+    category: combat
+    display-name: "&2Rotten Flesh"
+    icon: ROTTEN_FLESH
+    skill-xp:
+      type: combat
+      amount: 8
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "ZOMBIE_MINION_I"
+            description: "&7Zombie Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_ROTTEN_FLESH"
+            description: "&7Enchanted Rotten Flesh Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ZOMBIE_SWORD"
+            description: "&7Zombie Sword Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "ZOMBIE_MINION_IV"
+            description: "&7Zombie Minion IV Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ZOMBIE_RING"
+            description: "&7Zombie Ring Recipe"
+
+  bone:
+    category: combat
+    display-name: "&fBone"
+    icon: BONE
+    skill-xp:
+      type: combat
+      amount: 8
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "SKELETON_MINION_I"
+            description: "&7Skeleton Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_BONE"
+            description: "&7Enchanted Bone Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "SKELETON_MINION_III"
+            description: "&7Skeleton Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "BONE_BOOMERANG"
+            description: "&7Bone Boomerang Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_BONE_BLOCK"
+            description: "&7Enchanted Bone Block Recipe"
+
+  string:
+    category: combat
+    display-name: "&fString"
+    icon: STRING
+    skill-xp:
+      type: combat
+      amount: 8
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "SPIDER_MINION_I"
+            description: "&7Spider Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_STRING"
+            description: "&7Enchanted String Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "SPIDER_MINION_III"
+            description: "&7Spider Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "WEB_SLINGER"
+            description: "&7Web Slinger Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "TARANTULA_BOOTS"
+            description: "&7Tarantula Boots Recipe"
+
+  ender_pearl:
+    category: combat
+    display-name: "&5Ender Pearl"
+    icon: ENDER_PEARL
+    skill-xp:
+      type: combat
+      amount: 20
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "ENDERMAN_MINION_I"
+            description: "&7Enderman Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_ENDER_PEARL"
+            description: "&7Enchanted Ender Pearl Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "ENDERMAN_MINION_III"
+            description: "&7Enderman Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "ENDER_BOW"
+            description: "&7Ender Bow Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_EYE_OF_ENDER"
+            description: "&7Enchanted Eye of Ender Recipe"
+      6:
+        requirement: 5000
+        rewards:
+          - type: recipe
+            item: "ENDER_RING"
+            description: "&7Ender Ring Recipe"
+      7:
+        requirement: 10000
+        rewards:
+          - type: recipe
+            item: "ENDERMAN_MINION_VII"
+            description: "&7Enderman Minion VII Recipe"
+      8:
+        requirement: 25000
+        rewards:
+          - type: recipe
+            item: "ASPECT_OF_THE_END"
+            description: "&5Aspect of the End Recipe"
+      9:
+        requirement: 50000
+        rewards:
+          - type: recipe
+            item: "END_STONE_SWORD"
+            description: "&7End Stone Sword Recipe"
+
+  # ==================== FORAGING ====================
+  oak_log:
+    category: foraging
+    display-name: "&6Oak"
+    icon: OAK_LOG
+    skill-xp:
+      type: foraging
+      amount: 6
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "OAK_MINION_I"
+            description: "&7Oak Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_OAK_LOG"
+            description: "&7Enchanted Oak Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "OAK_MINION_III"
+            description: "&7Oak Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "ROOKIE_AXE"
+            description: "&7Rookie Axe Recipe"
+      5:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "SWEET_AXE"
+            description: "&7Sweet Axe Recipe"
+
+  spruce_log:
+    category: foraging
+    display-name: "&2Spruce"
+    icon: SPRUCE_LOG
+    skill-xp:
+      type: foraging
+      amount: 6
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "SPRUCE_MINION_I"
+            description: "&7Spruce Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_SPRUCE_LOG"
+            description: "&7Enchanted Spruce Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "SPRUCE_MINION_III"
+            description: "&7Spruce Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "SPRUCE_AXE"
+            description: "&7Spruce Axe Recipe"
+
+  dark_oak_log:
+    category: foraging
+    display-name: "&8Dark Oak"
+    icon: DARK_OAK_LOG
+    skill-xp:
+      type: foraging
+      amount: 6
+    tiers:
+      1:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "DARK_OAK_MINION_I"
+            description: "&7Dark Oak Minion I Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_DARK_OAK_LOG"
+            description: "&7Enchanted Dark Oak Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "DARK_OAK_MINION_III"
+            description: "&7Dark Oak Minion III Recipe"
+      4:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "TREECAPITATOR"
+            description: "&6Treecapitator Recipe"
+
+  # ==================== FISHING ====================
+  cod:
+    category: fishing
+    display-name: "&fRaw Fish"
+    icon: COD
+    skill-xp:
+      type: fishing
+      amount: 20
+    tiers:
+      1:
+        requirement: 20
+        rewards:
+          - type: recipe
+            item: "FISHING_MINION_I"
+            description: "&7Fishing Minion I Recipe"
+      2:
+        requirement: 50
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_RAW_FISH"
+            description: "&7Enchanted Raw Fish Recipe"
+      3:
+        requirement: 100
+        rewards:
+          - type: unlock
+            item: "FISH_BAG_SMALL"
+            description: "&7Small Fish Bag"
+      4:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "FISHING_MINION_IV"
+            description: "&7Fishing Minion IV Recipe"
+      5:
+        requirement: 1000
+        rewards:
+          - type: recipe
+            item: "FISH_HAT"
+            description: "&7Fish Hat Recipe"
+      6:
+        requirement: 2500
+        rewards:
+          - type: recipe
+            item: "ANGLER_ARMOR"
+            description: "&7Angler Armor Recipe"
+
+  salmon:
+    category: fishing
+    display-name: "&cSalmon"
+    icon: SALMON
+    skill-xp:
+      type: fishing
+      amount: 25
+    tiers:
+      1:
+        requirement: 20
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_RAW_SALMON"
+            description: "&7Enchanted Raw Salmon Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "SALMON_HAT"
+            description: "&7Salmon Hat Recipe"
+      3:
+        requirement: 250
+        rewards:
+          - type: recipe
+            item: "SALMON_ARMOR"
+            description: "&7Salmon Armor Recipe"
+
+  pufferfish:
+    category: fishing
+    display-name: "&ePufferfish"
+    icon: PUFFERFISH
+    skill-xp:
+      type: fishing
+      amount: 35
+    tiers:
+      1:
+        requirement: 20
+        rewards:
+          - type: recipe
+            item: "ENCHANTED_PUFFERFISH"
+            description: "&7Enchanted Pufferfish Recipe"
+      2:
+        requirement: 100
+        rewards:
+          - type: recipe
+            item: "PUFFERFISH_HAT"
+            description: "&7Pufferfish Hat Recipe"
+
+# Settings
+settings:
+  # Messages
+  messages:
+    tier-unlock: "&a&lCOLLECTION LEVEL UP &7{collection} &8{prev_tier}&7➜&a{new_tier}"
+    recipe-unlock: "&aYou unlocked the &e{recipe} &arecipe!"
+    progress: "&7{current}/{required} &8({percent}%)"
+
+  # Action bar
+  action-bar:
+    enabled: true
+    show-on-collect: true
+    duration: 60
+
+  # Sounds
+  sounds:
+    tier-unlock: ENTITY_PLAYER_LEVELUP
+    recipe-unlock: ENTITY_VILLAGER_YES
