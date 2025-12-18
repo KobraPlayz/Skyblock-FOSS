@@ -143,6 +143,11 @@ public class SkillManager {
         // Show action bar
         showXpGain(player, skillType, xp, newXp, newLevel);
 
+        // Grant XP to active pet (Phase 2)
+        if (plugin.getModuleManager().isModuleEnabled("pets")) {
+            plugin.getPetManager().grantPetXP(player.getUuid(), skill, xp);
+        }
+
         // Invalidate stats cache
         player.invalidateStatsCache();
     }

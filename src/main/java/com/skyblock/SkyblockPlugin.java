@@ -14,6 +14,7 @@ import com.skyblock.island.IslandManager;
 import com.skyblock.island.IslandProtectionListener;
 import com.skyblock.items.ItemManager;
 import com.skyblock.modules.ModuleManager;
+import com.skyblock.pets.PetManager;
 import com.skyblock.player.PlayerManager;
 import com.skyblock.skills.SkillManager;
 import com.skyblock.utils.ColorUtils;
@@ -58,6 +59,9 @@ public class SkyblockPlugin extends JavaPlugin {
     private CoopManager coopManager;
     private GardenManager gardenManager;
     private FurnitureManager furnitureManager;
+
+    // Phase 2 Managers
+    private PetManager petManager;
 
     // API
     private SkyblockAPI api;
@@ -105,6 +109,10 @@ public class SkyblockPlugin extends JavaPlugin {
             gardenManager = new GardenManager(this);
             furnitureManager = new FurnitureManager(this);
 
+            // Initialize Phase 2 managers
+            log(Level.INFO, "Initializing Phase 2 managers (Pets)...");
+            petManager = new PetManager(this);
+
             // Initialize API
             api = new SkyblockAPI(this);
 
@@ -127,7 +135,7 @@ public class SkyblockPlugin extends JavaPlugin {
 
             log(Level.INFO, "");
             log(Level.INFO, ColorUtils.colorize("&a&lSkyblockFOSS has been enabled successfully!"));
-            log(Level.INFO, ColorUtils.colorize("&7Phase 1.5 - Islands, Gardens & Worlds"));
+            log(Level.INFO, ColorUtils.colorize("&7Phase 2.0 - Pet System (Character Progression)"));
             log(Level.INFO, "");
 
         } catch (Exception e) {
@@ -160,6 +168,11 @@ public class SkyblockPlugin extends JavaPlugin {
             furnitureManager.shutdown();
         }
 
+        // Shutdown Phase 2 managers
+        if (petManager != null) {
+            petManager.shutdown();
+        }
+
         // Close database connections
         if (databaseManager != null) {
             databaseManager.shutdown();
@@ -183,7 +196,7 @@ public class SkyblockPlugin extends JavaPlugin {
         getLogger().info(" ____) |   <| |_| | |_) | | (_) | (__|   < ");
         getLogger().info("|_____/|_|\\_\\\\__, |_.__/|_|\\___/ \\___|_|\\_\\");
         getLogger().info("              __/ |  FOSS v" + getDescription().getVersion());
-        getLogger().info("             |___/   Phase 1.5 - Islands & Worlds");
+        getLogger().info("             |___/   Phase 2.0 - Pet System");
         getLogger().info("");
     }
 
@@ -233,6 +246,11 @@ public class SkyblockPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new IslandProtectionListener(this), this);
         getServer().getPluginManager().registerEvents(furnitureManager, this);
         getServer().getPluginManager().registerEvents(gardenManager, this);
+
+        // Phase 2 listeners (if enabled)
+        if (moduleManager.isModuleEnabled("pets")) {
+            getServer().getPluginManager().registerEvents(petManager, this);
+        }
     }
 
     private void setupHooks() {
@@ -345,5 +363,10 @@ public class SkyblockPlugin extends JavaPlugin {
 
     public FurnitureManager getFurnitureManager() {
         return furnitureManager;
+    }
+
+    // Phase 2 Getters
+    public PetManager getPetManager() {
+        return petManager;
     }
 }
