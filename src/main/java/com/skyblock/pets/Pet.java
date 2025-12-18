@@ -117,44 +117,28 @@ public class Pet {
      * Get the XP required for the next level.
      */
     public double getXpForNextLevel() {
-        if (level >= type.getMaxLevel()) {
-            return 0;
-        }
-        return calculateXpForLevel(level + 1);
+        return PetXPCalculator.getXPForNextLevel(level, rarity, type.getMaxLevel());
     }
 
     /**
      * Get the XP required for the current level.
      */
     public double getXpForCurrentLevel() {
-        return calculateXpForLevel(level);
+        return PetXPCalculator.getXPForLevel(level, rarity);
     }
 
     /**
      * Get progress to next level as percentage.
      */
     public double getProgressToNextLevel() {
-        if (level >= type.getMaxLevel()) {
-            return 100.0;
-        }
-
-        double currentLevelXp = getXpForCurrentLevel();
-        double nextLevelXp = getXpForNextLevel();
-
-        if (nextLevelXp <= currentLevelXp) {
-            return 100.0;
-        }
-
-        return ((xp - currentLevelXp) / (nextLevelXp - currentLevelXp)) * 100.0;
+        return PetXPCalculator.getProgressToNextLevel(xp, level, rarity, type.getMaxLevel());
     }
 
     /**
-     * Calculate XP required for a specific level.
-     * Formula: 100 * (1.1 ^ (level - 1))
+     * Get XP remaining until next level.
      */
-    public static double calculateXpForLevel(int level) {
-        if (level <= 1) return 0;
-        return 100 * Math.pow(1.1, level - 1);
+    public double getXpToNextLevel() {
+        return PetXPCalculator.getXPToNextLevel(xp, level, rarity, type.getMaxLevel());
     }
 
     /**
@@ -169,10 +153,8 @@ public class Pet {
         int oldLevel = level;
         xp += amount;
 
-        // Check for level ups
-        while (level < type.getMaxLevel() && xp >= getXpForNextLevel()) {
-            level++;
-        }
+        // Recalculate level based on total XP
+        level = PetXPCalculator.calculateLevelFromXP(xp, rarity, type.getMaxLevel());
 
         return level > oldLevel;
     }
@@ -200,16 +182,9 @@ public class Pet {
 
     /**
      * Calculate current level from XP.
+     * Delegates to PetXPCalculator.
      */
-    public static int calculateLevel(double totalXp, int maxLevel) {
-        int level = 1;
-        for (int i = 2; i <= maxLevel; i++) {
-            if (totalXp >= calculateXpForLevel(i)) {
-                level = i;
-            } else {
-                break;
-            }
-        }
-        return level;
+    public static int calculateLevel(double totalXp, PetRarity rarity, int maxLevel) {
+        return PetXPCalculator.calculateLevelFromXP(totalXp, rarity, maxLevel);
     }
 }
