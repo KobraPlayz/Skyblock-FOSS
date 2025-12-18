@@ -1,0 +1,1128 @@
+# ========================================
+# HYPIXEL SKYBLOCK PETS DATABASE
+# ========================================
+# Complete database of all Hypixel Skyblock pets
+# Based on research from SkyCrypt, Hypixel Wiki, and community sources
+#
+# TEXTURE SYSTEM:
+# - material: Fallback Material (ALWAYS used if texture is empty)
+# - texture: Base64 player head texture (optional, upgradeable)
+# - If texture is empty/null, uses material
+# - If texture has value, renders as custom player head
+#
+# To add textures later:
+# 1. Find pet head texture at minecraft-heads.com or via NBT extraction
+# 2. Paste base64 value in texture field
+# 3. Reload plugin to apply
+# ========================================
+
+pets:
+  # ==================== COMBAT PETS ====================
+
+  WOLF:
+    name: "Wolf"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: BONE
+      texture: ""
+      # Texture URL: https://minecraft-heads.com/custom-heads/animals/6839-wolf
+    abilities:
+      - name: "Alpha Dog"
+        description: "&7Gain +&a5% &7♣ Combat Wisdom"
+      - name: "Pack Leader"
+        description: "&7Take &a30% &7reduced damage from wolves"
+      - name: "Combat Exp Boost"
+        description: "&7Gain +&a30% &7Combat XP"
+
+  ENDERMAN:
+    name: "Enderman"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: ENDER_PEARL
+      texture: ""
+      # Texture URL: https://minecraft-heads.com/custom-heads/mobs/272-enderman
+    abilities:
+      - name: "Enderian"
+        description: "&7Take &a10% &7reduced damage from end monsters"
+      - name: "Teleport Savvy"
+        description: "&7Buffs teleportation abilities"
+      - name: "Zealot Madness"
+        description: "&7Increases odds of finding special Zealots"
+
+  ENDER_DRAGON:
+    name: "Ender Dragon"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: DRAGON_HEAD
+      texture: ""
+      # Texture URL: https://minecraft-heads.com/custom-heads/mobs/321-ender-dragon
+    abilities:
+      - name: "End Strike"
+        description: "&7Deal +&a50% &7damage to end monsters"
+      - name: "One with the Dragons"
+        description: "&7Receive +&a25% &7less damage from dragons"
+      - name: "Superior"
+        description: "&7Grants all superior dragon armor perks"
+
+  GOLDEN_DRAGON:
+    name: "Golden Dragon"
+    category: COMBAT
+    available_rarities: [LEGENDARY, MYTHIC]
+    icon:
+      material: GOLD_BLOCK
+      texture: ""
+    abilities:
+      - name: "Golden Breath"
+        description: "&7Grants +&650 &7strength"
+      - name: "Gold's Power"
+        description: "&7Gain strength based on gold collection"
+      - name: "Dragon's Greed"
+        description: "&7Gain +&c50% &7⫽ Ferocity"
+
+  TIGER:
+    name: "Tiger"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: ORANGE_WOOL
+      texture: ""
+    abilities:
+      - name: "Merciless Swipe"
+        description: "&7Grants +&c5% &7⫽ Ferocity"
+      - name: "Hemorrhage"
+        description: "&7Gain +&c25 &7☠ Crit Damage"
+      - name: "Apex Predator"
+        description: "&7Gain +&c2% &7☠ Crit Damage per kill"
+
+  TARANTULA:
+    name: "Tarantula"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: SPIDER_EYE
+      texture: ""
+    abilities:
+      - name: "Eight Legs"
+        description: "&7Reduces damage taken by &a10%"
+      - name: "Webbed Cells"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Arachnid Slayer"
+        description: "&7Gain +&c20% &7☠ Crit Damage vs spiders"
+
+  SPIDER:
+    name: "Spider"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: STRING
+      texture: ""
+    abilities:
+      - name: "Wall Climb"
+        description: "&7Gain permanent Slow Falling effect"
+      - name: "Web-Slinger"
+        description: "&7Gain +&c10 &7❁ Strength"
+      - name: "One With The Spider"
+        description: "&7Grants spider senses"
+
+  ZOMBIE:
+    name: "Zombie"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: ROTTEN_FLESH
+      texture: ""
+    abilities:
+      - name: "Undead Vigor"
+        description: "&7Grants +&a1 &7❤ Health per level"
+      - name: "Rotten Bite"
+        description: "&7Grants +&c1% &7☠ Crit Damage per level"
+      - name: "Living Dead"
+        description: "&7Increases zombie damage dealt"
+
+  SKELETON:
+    name: "Skeleton"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: BONE_BLOCK
+      texture: ""
+    abilities:
+      - name: "Bone Collector"
+        description: "&7Grants +&c15% &7bow damage"
+      - name: "Combo"
+        description: "&7Grants +&c2 &7☠ Crit Damage per combo"
+      - name: "Skeletal Defense"
+        description: "&7Grants +&9100 &7❈ Defense"
+
+  WITHER_SKELETON:
+    name: "Wither Skeleton"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: WITHER_SKELETON_SKULL
+      texture: ""
+    abilities:
+      - name: "Wither Blood"
+        description: "&7Grants +&c1 &7☠ Crit Damage per HP"
+      - name: "Death's Touch"
+        description: "&7Grants wither immunity"
+      - name: "Bone Breaker"
+        description: "&7Deal +&c50% &7damage to wither mobs"
+
+  PHOENIX:
+    name: "Phoenix"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: BLAZE_POWDER
+      texture: ""
+    abilities:
+      - name: "Rekindle"
+        description: "&7Grants a second life after death"
+      - name: "Fourth Flare"
+        description: "&7Grants +&c10 &7❁ Strength in the 4th upgrade slot"
+      - name: "Magic Bird"
+        description: "&7Grants +&c50 &7☠ Crit Damage"
+
+  BLAZE:
+    name: "Blaze"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: BLAZE_ROD
+      texture: ""
+    abilities:
+      - name: "Nether Embodiment"
+        description: "&7Grants fire immunity"
+      - name: "Ashes"
+        description: "&7Deal +&c10% &7damage vs blazes"
+      - name: "Blaze Swarm"
+        description: "&7Spawn blaze minions"
+
+  MAGMA_CUBE:
+    name: "Magma Cube"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: MAGMA_CREAM
+      texture: ""
+    abilities:
+      - name: "Slimy Minions"
+        description: "&7Grants +&430% &7slime minion output"
+      - name: "Salt Cube"
+        description: "&7Deal +&c25% &7damage to slimes"
+      - name: "Hot Potato"
+        description: "&7Deal +&c10 &7❁ Damage in nether"
+
+  PIGMAN:
+    name: "Pigman"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: GOLD_SWORD
+      texture: ""
+    abilities:
+      - name: "Bacon Farmer"
+        description: "&7Grants +&c20 &7❁ Strength"
+      - name: "Pork Master"
+        description: "&7Deal +&c25% &7damage to pigs"
+      - name: "Giant Slayer"
+        description: "&7Deal more damage to high HP mobs"
+
+  GRIFFIN:
+    name: "Griffin"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: FEATHER
+      texture: ""
+    abilities:
+      - name: "Odyssey"
+        description: "&7Grants +&c10 &7❁ Strength, +&c10 &7☠ Crit Damage"
+      - name: "Legendary Constitution"
+        description: "&7Grants +&c5 &7❤ Health"
+      - name: "Perpetual Empathy"
+        description: "&7Grants +&c100 &7✎ Intelligence"
+
+  GOLEM:
+    name: "Golem"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: IRON_BLOCK
+      texture: ""
+    abilities:
+      - name: "Last Stand"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Ricochet"
+        description: "&7Reflect &c25% &7of damage taken"
+      - name: "Toss"
+        description: "&7Reduces knockback"
+
+  GHOUL:
+    name: "Ghoul"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: ROTTEN_FLESH
+      texture: ""
+    abilities:
+      - name: "Amplified Healing"
+        description: "&7Grants +&c50% &7healing"
+      - name: "Zombie Arm"
+        description: "&7Deal +&c50% &7damage to zombies"
+      - name: "Reaper Soul"
+        description: "&7Grants soul-based perks"
+
+  HOUND:
+    name: "Hound"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: BONE
+      texture: ""
+    abilities:
+      - name: "Scavenger"
+        description: "&7Gain +&61 &7coin per monster kill"
+      - name: "Finder"
+        description: "&7Increases treasure find chance"
+      - name: "Fury Claws"
+        description: "&7Grants +&c15 &7⫽ Ferocity"
+
+  BLACK_CAT:
+    name: "Black Cat"
+    category: COMBAT
+    available_rarities: [LEGENDARY, MYTHIC]
+    icon:
+      material: INK_SAC
+      texture: ""
+    abilities:
+      - name: "Hunter"
+        description: "&7Grants +&b1 &7✯ Magic Find per level"
+      - name: "Omen"
+        description: "&7Grants +&a1 &7♣ Pet Luck per level"
+      - name: "Supernatural"
+        description: "&7Grants extra magic find"
+
+  BAL:
+    name: "Bal"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: FIRE_CHARGE
+      texture: ""
+    abilities:
+      - name: "Heat Immunity"
+        description: "&7Grants immunity to heat in crystal hollows"
+      - name: "Fire Whip"
+        description: "&7Deal +&c20% &7damage to Bal"
+      - name: "Bal-anced"
+        description: "&7Grants +&c10 &7❁ Strength"
+
+  KUUDRA:
+    name: "Kuudra"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: MAGMA_BLOCK
+      texture: ""
+    abilities:
+      - name: "Cold Fusion"
+        description: "&7Deal +&c15% &7damage in Crimson Isle"
+      - name: "Crimson"
+        description: "&7Grants +&c25 &7❁ Strength"
+      - name: "Wither Bait"
+        description: "&7Spawn extra wither mobs"
+
+  SPIRIT:
+    name: "Spirit"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: GHAST_TEAR
+      texture: ""
+    abilities:
+      - name: "Half Life"
+        description: "&7Grants ghost abilities in dungeons"
+      - name: "Spirit Assistance"
+        description: "&7Spawns ghost helpers"
+      - name: "Soulflow"
+        description: "&7Grants dungeon souls perks"
+
+  TURTLE:
+    name: "Turtle"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: TURTLE_HELMET
+      texture: ""
+    abilities:
+      - name: "Turtle Tactics"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Sneak"
+        description: "&7Grants +&9200 &7❈ Defense while sneaking"
+      - name: "Unflippable"
+        description: "&7Grants knockback resistance"
+
+  SNOWMAN:
+    name: "Snowman"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: SNOWBALL
+      texture: ""
+    abilities:
+      - name: "Blizzard"
+        description: "&7Slows nearby enemies"
+      - name: "Frostbite"
+        description: "&7Deals AoE cold damage"
+      - name: "Snow Cannon"
+        description: "&7Launches snowballs at enemies"
+
+  SKELETON_HORSE:
+    name: "Skeleton Horse"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: BONE_BLOCK
+      texture: ""
+    abilities:
+      - name: "Ridable"
+        description: "&7Right click to ride"
+      - name: "Run"
+        description: "&7Grants +&f50 &7✦ Speed while riding"
+      - name: "Ride Into Battle"
+        description: "&7Grants +&c15 &7☠ Crit Damage while riding"
+
+  HORSE:
+    name: "Horse"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: SADDLE
+      texture: ""
+    abilities:
+      - name: "Ridable"
+        description: "&7Right click to ride"
+      - name: "Run"
+        description: "&7Grants +&f50 &7✦ Speed while riding"
+      - name: "Ride Into Battle"
+        description: "&7Grants bow damage while riding"
+
+  GRANDMA_WOLF:
+    name: "Grandma Wolf"
+    category: COMBAT
+    available_rarities: [LEGENDARY]
+    icon:
+      material: BONE
+      texture: ""
+    abilities:
+      - name: "Nana's Wisdom"
+        description: "&7Gain buffs from kill combos"
+      - name: "Alpha Grandma"
+        description: "&7Take reduced damage from wolves"
+      - name: "Knit Slayer"
+        description: "&7Deal more damage based on combo"
+
+  RAT:
+    name: "Rat"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: GRAY_DYE
+      texture: ""
+    abilities:
+      - name: "Morph"
+        description: "&7Right click to morph into a rat"
+      - name: "Cheese Quest"
+        description: "&7Smells nearby cheese"
+      - name: "CHEESE!"
+        description: "&7Grants buffs when finding cheese"
+
+  TIGER:
+    name: "Tiger"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: ORANGE_WOOL
+      texture: ""
+    abilities:
+      - name: "Merciless Swipe"
+        description: "&7Grants +&c5% &7⫽ Ferocity"
+      - name: "Hemorrhage"
+        description: "&7Gain +&c25 &7☠ Crit Damage"
+
+  BABY_YETI:
+    name: "Baby Yeti"
+    category: COMBAT
+    available_rarities: [LEGENDARY]
+    icon:
+      material: SNOW_BLOCK
+      texture: ""
+    abilities:
+      - name: "Cold Breeze"
+        description: "&7Grants +&c50 &7❁ Strength in cold areas"
+      - name: "Ice Shields"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Yeti Fury"
+        description: "&7Deal +&c25% &7damage in cold biomes"
+
+  BLUE_WHALE:
+    name: "Blue Whale"
+    category: COMBAT
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: PRISMARINE_SHARD
+      texture: ""
+    abilities:
+      - name: "Ingest"
+        description: "&7Grants +&c1 &7❤ Health per level"
+      - name: "Bulk"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Archimedes"
+        description: "&7Grants water-based perks"
+
+  TYRANNOSAURUS:
+    name: "Tyrannosaurus"
+    category: COMBAT
+    available_rarities: [LEGENDARY]
+    icon:
+      material: BONE_BLOCK
+      texture: ""
+    abilities:
+      - name: "Apex Predator"
+        description: "&7Deal +&c15% &7melee damage"
+      - name: "King of Dinosaurs"
+        description: "&7Grants +&c50 &7❁ Strength"
+      - name: "Cataclysm"
+        description: "&7Deal massive AoE damage"
+
+  GOBLIN:
+    name: "Goblin"
+    category: COMBAT
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: GOLD_NUGGET
+      texture: ""
+    abilities:
+      - name: "Greed"
+        description: "&7Gain +&610% &7coins from kills"
+      - name: "Goblin Brain"
+        description: "&7Grants +&f10 &7✦ Speed"
+      - name: "Coin Magnet"
+        description: "&7Attracts nearby coins"
+
+  JELLYFISH:
+    name: "Jellyfish"
+    category: COMBAT
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: PRISMARINE_CRYSTALS
+      texture: ""
+    abilities:
+      - name: "Radiant Regeneration"
+        description: "&7Heal party members in dungeons"
+      - name: "Healing Ripple"
+        description: "&7Grant healing aura"
+      - name: "Powerful Potions"
+        description: "&7Amplify healing potions"
+
+  # ==================== MINING PETS ====================
+
+  ROCK:
+    name: "Rock"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: STONE
+      texture: ""
+    abilities:
+      - name: "Ridable"
+        description: "&7Right click to ride"
+      - name: "Sailing Stone"
+        description: "&7Sneak to teleport rock to you"
+      - name: "Fortify"
+        description: "&7Grants +&9100 &7❈ Defense while sitting"
+      - name: "Steady Ground"
+        description: "&7Grants +&c25 &7❁ Strength while sitting"
+
+  MITHRIL_GOLEM:
+    name: "Mithril Golem"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: PRISMARINE_CRYSTALS
+      texture: ""
+    abilities:
+      - name: "Mithril Affinity"
+        description: "&7Grants +&b5 &7☘ Mining Fortune (Mithril)"
+      - name: "The Smell Of Metal"
+        description: "&7Grants +&b10 &7⸕ Mining Speed"
+      - name: "Danger Averse"
+        description: "&7Grants +&9100 &7❈ Defense"
+
+  ENDERMITE:
+    name: "Endermite"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: END_STONE
+      texture: ""
+    abilities:
+      - name: "More Stonks"
+        description: "&7Grants +&b5 &7☘ Mining Fortune"
+      - name: "Mining Experience"
+        description: "&7Gain +&a10% &7mining XP"
+      - name: "Silverfish"
+        description: "&7Find extra blocks while mining"
+
+  SILVERFISH:
+    name: "Silverfish"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: STONE
+      texture: ""
+    abilities:
+      - name: "True Defense Boost"
+        description: "&7Grants +&f5 &7❂ True Defense"
+      - name: "Mining Wisdom Boost"
+        description: "&7Grants +&a5 &7♣ Mining Wisdom"
+      - name: "Dexterity"
+        description: "&7Grants +&9100 &7❈ Defense"
+
+  SCATHA:
+    name: "Scatha"
+    category: MINING
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: AMETHYST_SHARD
+      texture: ""
+    abilities:
+      - name: "Buried Treasure"
+        description: "&7Find extra treasure while mining"
+      - name: "Hardened Scales"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Gemstone Affinity"
+        description: "&7Grants +&b10 &7☘ Gemstone Fortune"
+
+  BAT:
+    name: "Bat"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: COAL
+      texture: ""
+    abilities:
+      - name: "Candy Lover"
+        description: "&7Grants +&d5% &7candy drops"
+      - name: "Nightmare"
+        description: "&7Grants night vision"
+      - name: "Wings of Steel"
+        description: "&7Grants slow falling"
+
+  ARMADILLO:
+    name: "Armadillo"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: IRON_CHESTPLATE
+      texture: ""
+    abilities:
+      - name: "Ridable"
+        description: "&7Right click to ride"
+      - name: "Roll Out"
+        description: "&7Gain +&f25 &7✦ Speed while rolling"
+      - name: "Iron Scales"
+        description: "&7Grants +&9150 &7❈ Defense"
+
+  SNAIL:
+    name: "Snail"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: SLIME_BALL
+      texture: ""
+    abilities:
+      - name: "Slow But Steady"
+        description: "&7Convert Mining Speed to Fortune"
+      - name: "Ramming Speed"
+        description: "&7Gain buffs while sprinting"
+      - name: "Steady Ground"
+        description: "&7Grants +&b10 &7☘ Mining Fortune"
+
+  MAMMOTH:
+    name: "Mammoth"
+    category: MINING
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: PACKED_ICE
+      texture: ""
+    abilities:
+      - name: "Thick Fur"
+        description: "&7Grants +&9200 &7❈ Defense"
+      - name: "Snow Resistance"
+        description: "&7Reduced damage from cold"
+      - name: "Frozen Feet"
+        description: "&7Walk faster on ice"
+
+  MOLE:
+    name: "Mole"
+    category: MINING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: DIRT
+      texture: ""
+    abilities:
+      - name: "Mining Exp Boost"
+        description: "&7Gain +&a20% &7mining XP"
+      - name: "Efficient Miner"
+        description: "&7Grants +&b20 &7☘ Mining Fortune"
+      - name: "Subterranean"
+        description: "&7Grants +&c50 &7✎ Intelligence"
+
+  # ==================== FARMING PETS ====================
+
+  BEE:
+    name: "Bee"
+    category: FARMING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: HONEYCOMB
+      texture: ""
+    abilities:
+      - name: "Hive"
+        description: "&7Gain +&b0.3 &7☘ Farming Fortune per level"
+      - name: "Busy Buzzing"
+        description: "&7Grants +&f5 &7✦ Speed"
+      - name: "Weaponized Honey"
+        description: "&7Grants +&c10 &7❁ Strength"
+
+  CHICKEN:
+    name: "Chicken"
+    category: FARMING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: EGG
+      texture: ""
+    abilities:
+      - name: "Light Feet"
+        description: "&7Reduces fall damage by &a50%"
+      - name: "Eggstra"
+        description: "&7Grants +&620% &7egg collection"
+      - name: "Mighty Chickens"
+        description: "&7Spawn chicken minions"
+
+  PIG:
+    name: "Pig"
+    category: FARMING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: PORKCHOP
+      texture: ""
+    abilities:
+      - name: "Ridable"
+        description: "&7Right click to ride"
+      - name: "Run"
+        description: "&7Grants +&f25 &7✦ Speed while riding"
+      - name: "Sprint"
+        description: "&7Double-tap forward to sprint"
+
+  RABBIT:
+    name: "Rabbit"
+    category: FARMING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: RABBIT_FOOT
+      texture: ""
+    abilities:
+      - name: "Happy Hop"
+        description: "&7Grants +&f10 &7✦ Speed"
+      - name: "Farming Exp Boost"
+        description: "&7Gain +&a15% &7farming XP"
+      - name: "Farming Wisdom"
+        description: "&7Grants +&a5 &7♣ Farming Wisdom"
+
+  ELEPHANT:
+    name: "Elephant"
+    category: FARMING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: GRAY_WOOL
+      texture: ""
+    abilities:
+      - name: "Stomp"
+        description: "&7Deal AoE damage with abilities"
+      - name: "Walking Fortress"
+        description: "&7Grants +&9200 &7❈ Defense"
+      - name: "Trunk Efficiency"
+        description: "&7Grants +&b10 &7☘ Farming Fortune"
+
+  MOOSHROOM_COW:
+    name: "Mooshroom Cow"
+    category: FARMING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: RED_MUSHROOM
+      texture: ""
+    abilities:
+      - name: "Mushroom Eater"
+        description: "&7Gain buffs from mushrooms"
+      - name: "Efficient Mushroom"
+        description: "&7Grants +&620% &7mushroom collection"
+      - name: "Farming Exp Boost"
+        description: "&7Gain +&a10% &7farming XP"
+
+  # ==================== FORAGING PETS ====================
+
+  OCELOT:
+    name: "Ocelot"
+    category: FORAGING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: JUNGLE_LOG
+      texture: ""
+    abilities:
+      - name: "Foraging Wisdom"
+        description: "&7Grants +&a1 &7♣ Foraging Wisdom per level"
+      - name: "Tree Hugger"
+        description: "&7Deal +&c10% &7damage to tree-type mobs"
+      - name: "Parkour"
+        description: "&7Grants +&f25 &7✦ Speed"
+
+  MONKEY:
+    name: "Monkey"
+    category: FORAGING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: JUNGLE_LEAVES
+      texture: ""
+    abilities:
+      - name: "Vine Swing"
+        description: "&7Grants +&f30 &7✦ Speed in jungle"
+      - name: "Foraging Exp Boost"
+        description: "&7Gain +&a20% &7foraging XP"
+      - name: "Banana Fanatic"
+        description: "&7Find extra bananas"
+
+  GIRAFFE:
+    name: "Giraffe"
+    category: FORAGING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: ACACIA_LOG
+      texture: ""
+    abilities:
+      - name: "Good Heart"
+        description: "&7Grants +&c1 &7❤ Health per level"
+      - name: "Higher Ground"
+        description: "&7See farther and reach higher"
+      - name: "Long Reach"
+        description: "&7Increase block reach distance"
+
+  LION:
+    name: "Lion"
+    category: FORAGING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: YELLOW_WOOL
+      texture: ""
+    abilities:
+      - name: "King Of The Jungle"
+        description: "&7Grants +&c1 &7❁ Strength per level"
+      - name: "Primal Force"
+        description: "&7Grants +&c3 &7⫽ Ferocity"
+      - name: "First Pounce"
+        description: "&7First hit deals +&c50% &7damage"
+
+  # ==================== FISHING PETS ====================
+
+  DOLPHIN:
+    name: "Dolphin"
+    category: FISHING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: RAW_COD
+      texture: ""
+    abilities:
+      - name: "Pod Tactics"
+        description: "&7Grants buffs when fishing with others"
+      - name: "Echolocation"
+        description: "&7Grants +&935 &7☂ Fishing Speed"
+      - name: "Splash Surprise"
+        description: "&7Stun sea creatures on catch"
+
+  FLYING_FISH:
+    name: "Flying Fish"
+    category: FISHING
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: TROPICAL_FISH
+      texture: ""
+    abilities:
+      - name: "Quick Reel"
+        description: "&7Grants +&935 &7☂ Fishing Speed"
+      - name: "Water Bending"
+        description: "&7Grants water breathing"
+      - name: "Lava Bending"
+        description: "&7Fish in lava"
+
+  SQUID:
+    name: "Squid"
+    category: FISHING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: INK_SAC
+      texture: ""
+    abilities:
+      - name: "More Ink"
+        description: "&7Gain +&61% &7coins from squid"
+      - name: "Ink Specialty"
+        description: "&7Gain +&b1 &7♣ Fishing Wisdom per level"
+      - name: "Fishing Exp Boost"
+        description: "&7Gain +&a10% &7fishing XP"
+
+  MEGALODON:
+    name: "Megalodon"
+    category: FISHING
+    available_rarities: [EPIC, LEGENDARY]
+    icon:
+      material: PRISMARINE_SHARD
+      texture: ""
+    abilities:
+      - name: "Blood Scent"
+        description: "&7Deal +&c50% &7damage to damaged mobs"
+      - name: "Enhanced Scales"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Feeding Frenzy"
+        description: "&7Gain buffs after kills"
+
+  AMMONITE:
+    name: "Ammonite"
+    category: FISHING
+    available_rarities: [LEGENDARY]
+    icon:
+      material: NAUTILUS_SHELL
+      texture: ""
+    abilities:
+      - name: "Heart Of The Sea"
+        description: "&7Grants +&925 &7☂ Sea Creature Chance"
+      - name: "Expert Cave Fisher"
+        description: "&7Catch rare mobs in Crimson Isle"
+      - name: "Gift Of The Ammonite"
+        description: "&7Doubles fishing loot"
+
+  REINDEER:
+    name: "Reindeer"
+    category: FISHING
+    available_rarities: [LEGENDARY]
+    icon:
+      material: BROWN_WOOL
+      texture: ""
+    abilities:
+      - name: "Winter Fishing"
+        description: "&7Catch winter event fish"
+      - name: "Icy Wind"
+        description: "&7Grants +&f25 &7✦ Speed"
+      - name: "Festive"
+        description: "&7Grants holiday buffs"
+
+  PENGUIN:
+    name: "Penguin"
+    category: FISHING
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: PACKED_ICE
+      texture: ""
+    abilities:
+      - name: "Icy Feet"
+        description: "&7Walk faster on ice"
+      - name: "Thick Feathers"
+        description: "&7Reduced cold damage"
+      - name: "Deep Sea Diver"
+        description: "&7Catch deep sea creatures"
+
+  SPINOSAURUS:
+    name: "Spinosaurus"
+    category: FISHING
+    available_rarities: [LEGENDARY]
+    icon:
+      material: BONE_BLOCK
+      texture: ""
+    abilities:
+      - name: "Apex Predator"
+        description: "&7Deal +&c25% &7damage to sea creatures"
+      - name: "Sail Power"
+        description: "&7Grants +&935 &7☂ Fishing Speed"
+      - name: "Ancient Bloodline"
+        description: "&7Increased rare sea creature chance"
+
+  # ==================== ENCHANTING PETS ====================
+
+  GUARDIAN:
+    name: "Guardian"
+    category: ENCHANTING
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: PRISMARINE_SHARD
+      texture: ""
+    abilities:
+      - name: "Laserbeam"
+        description: "&7Deal ranged laser damage"
+      - name: "Enchanting Exp Boost"
+        description: "&7Gain +&a30% &7enchanting XP"
+      - name: "Mana Pool"
+        description: "&7Grants +&b100 &7✎ Intelligence"
+
+  # ==================== ALCHEMY PETS ====================
+
+  PARROT:
+    name: "Parrot"
+    category: ALCHEMY
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: FEATHER
+      texture: ""
+    abilities:
+      - name: "Flamboyant"
+        description: "&7Grants +&b5 &7✎ Intelligence per level"
+      - name: "Repeat"
+        description: "&7Gain buffs near alchemy stands"
+      - name: "Bird Discourse"
+        description: "&7Gain +&d15% &7potion duration"
+
+  SHEEP:
+    name: "Sheep"
+    category: ALCHEMY
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY]
+    icon:
+      material: WHITE_WOOL
+      texture: ""
+    abilities:
+      - name: "Mana Saver"
+        description: "&7Reduces mana cost by &b10%"
+      - name: "Wooly Fur"
+        description: "&7Grants +&9100 &7❈ Defense"
+      - name: "Alchemy Exp Boost"
+        description: "&7Gain +&a20% &7alchemy XP"
+
+  # ==================== MISCELLANEOUS PETS ====================
+
+  JERRY:
+    name: "Jerry"
+    category: MISC
+    available_rarities: [COMMON, UNCOMMON, RARE, EPIC, LEGENDARY, MYTHIC]
+    icon:
+      material: SPONGE
+      texture: ""
+    abilities:
+      - name: "Jerry"
+        description: "&7Gain &d50% &7chance to deal normal damage"
+      - name: "Jerry"
+        description: "&7Actually gains perks"
+      - name: "Jerry"
+        description: "&7It's Jerry!"
+
+  BINGO:
+    name: "Bingo"
+    category: MISC
+    available_rarities: [COMMON]
+    icon:
+      material: NAME_TAG
+      texture: ""
+    abilities:
+      - name: "Bingo Booster"
+        description: "&7Gain +&625% &7collection XP"
+      - name: "Lucky Bingo"
+        description: "&7Increased bingo completion rewards"
+
+  WISP:
+    name: "Wisp"
+    category: MISC
+    available_rarities: [MYTHIC]
+    icon:
+      material: GHAST_TEAR
+      texture: ""
+    abilities:
+      - name: "Nether Wart Pouch"
+        description: "&7Track bulwark defense from blazes"
+      - name: "Multishot"
+        description: "&7Shoot 3 blazes at once"
+      - name: "Wither Shield Scroll"
+        description: "&7Gain wither shield buffs"
+
+  OWL:
+    name: "Owl"
+    category: MISC
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: FEATHER
+      texture: ""
+    abilities:
+      - name: "Feathered Blessing"
+        description: "&7Gain +&a10% &7experience from all sources"
+      - name: "Wise Owl"
+        description: "&7Grants +&b50 &7✎ Intelligence"
+      - name: "Night Vision"
+        description: "&7See better at night"
+
+  MONTEZUMA:
+    name: "Montezuma"
+    category: MISC
+    available_rarities: [MYTHIC]
+    icon:
+      material: SOUL_SAND
+      texture: ""
+    abilities:
+      - name: "Rift Time"
+        description: "&7Gain perks based on rift souls"
+      - name: "Blood Offering"
+        description: "&7Convert HP to damage"
+      - name: "Essence Manipulation"
+        description: "&7Gain rift-specific abilities"
+
+  RIFT_FERRET:
+    name: "Rift Ferret"
+    category: MISC
+    available_rarities: [RARE, EPIC, LEGENDARY]
+    icon:
+      material: ENDER_EYE
+      texture: ""
+    abilities:
+      - name: "Fast Hands"
+        description: "&7Grants +&f30 &7✦ Speed in rift"
+      - name: "Orb Attraction"
+        description: "&7Attract XP orbs"
+      - name: "Lucky Looter"
+        description: "&7Find extra loot"
+
+  ANKYLOSAURUS:
+    name: "Ankylosaurus"
+    category: MISC
+    available_rarities: [LEGENDARY]
+    icon:
+      material: IRON_CHESTPLATE
+      texture: ""
+    abilities:
+      - name: "Tank Build"
+        description: "&7Grants +&9300 &7❈ Defense"
+      - name: "Armored Scales"
+        description: "&7Reduce incoming damage by &a15%"
+      - name: "Prehistoric Strength"
+        description: "&7Grants +&c50 &7❁ Strength"
+
+# ========================================
+# ADMIN CUSTOMIZATION NOTES
+# ========================================
+# To add custom textures:
+# 1. Get base64 texture from minecraft-heads.com
+# 2. Paste into texture field
+# 3. Use /sbadmin pets → Texture Editor
+# 4. Preview before saving
+#
+# Custom pets can be created via admin GUI
+# with any material/texture combination
+# ========================================
