@@ -77,26 +77,58 @@ modules:
     particles: true
 
 # =====================================================
-# Phase 2 Modules (Coming Soon)
-# These will be disabled until Phase 2 implementation
+# Phase 2 Modules
+# Character progression and inventory systems
 # =====================================================
 
 phase2:
+  # Pet System
   pets:
-    enabled: false
-    show-coming-soon: true
+    enabled: true
+    show-coming-soon: false
+    # Pet XP gain
+    xp-gain: true
+    # Pet summoning/unsummoning
+    summoning: true
+    # Pet abilities and stat bonuses
+    abilities: true
+    # Pet items (Tier Boost, etc.)
+    pet-items: true
+    # Pet candy usage
+    candy: true
 
+  # Accessory/Talisman System
   accessories:
     enabled: false
     show-coming-soon: true
+    # Accessory bag
+    bag: true
+    # Magical power calculation
+    magical-power: true
+    # Duplicate detection
+    duplicate-detection: true
+    # Reforging accessories
+    reforging: true
 
+  # Backpack System
   backpacks:
     enabled: false
     show-coming-soon: true
+    # Different backpack sizes
+    sizes: true
+    # Backpack upgrades
+    upgrades: true
 
+  # Banking System
   banking:
     enabled: false
     show-coming-soon: true
+    # Personal bank accounts
+    accounts: true
+    # Interest calculation
+    interest: true
+    # Transaction history
+    transactions: true
 
 # =====================================================
 # Phase 3 Modules (Coming Soon)

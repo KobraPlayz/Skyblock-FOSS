@@ -1,0 +1,149 @@
+# ========================================
+# SKYBLOCK PETS CONFIGURATION
+# ========================================
+# Phase 2.0 - Pet System
+#
+# This file configures all pet-related mechanics including
+# XP gain, leveling, and performance settings.
+# ========================================
+
+# Performance and caching settings
+cache:
+  # Maximum number of player pet collections to cache
+  # Higher values use more memory but reduce database queries
+  size: 1000
+
+  # Cache expiry time in minutes for pet data
+  expiry-minutes: 30
+
+  # Cache expiry time in minutes for active pets (accessed more frequently)
+  active-pet-expiry-minutes: 10
+
+# XP gain settings
+xp:
+  # Multiplier for pet XP gain from skill XP
+  # Pet XP = Skill XP × multiplier
+  # Default: 1.0 (same as Hypixel)
+  # Set lower for slower progression, higher for faster
+  multiplier: 1.0
+
+  # Whether pets gain XP when the player is offline
+  # Default: false (Hypixel behavior)
+  gain-offline: false
+
+# Pet leveling settings
+leveling:
+  # Send a message to the player when their pet levels up
+  send-level-up-message: true
+
+  # Play a sound when the pet levels up
+  play-level-up-sound: true
+
+  # Sound to play on level up (Bukkit Sound enum name)
+  level-up-sound: ENTITY_PLAYER_LEVELUP
+
+  # Show particles when the pet levels up
+  show-level-up-particles: true
+
+  # Particle type for level up (Bukkit Particle enum name)
+  level-up-particle: VILLAGER_HAPPY
+
+# Pet summoning settings
+summoning:
+  # Allow only one pet to be active at a time
+  # Default: true (Hypixel behavior)
+  one-pet-limit: true
+
+  # Send a message when summoning/unsummoning a pet
+  send-summon-message: true
+
+  # Play a sound when summoning a pet
+  play-summon-sound: true
+
+  # Sound to play on summon (Bukkit Sound enum name)
+  summon-sound: ENTITY_CHICKEN_EGG
+
+  # Sound to play on unsummon (Bukkit Sound enum name)
+  unsummon-sound: ENTITY_CHICKEN_EGG
+
+# Pet candy settings
+candy:
+  # Maximum candy that can be used per pet
+  # Candy adds levels beyond the normal max
+  max-candy-per-pet: 10
+
+  # XP boost per candy used (percentage)
+  xp-boost-per-candy: 5.0
+
+# Pet item settings
+held-items:
+  # Enable pet held items (e.g., Tier Boost, Lucky Clover)
+  enabled: true
+
+  # List of allowed pet items (item IDs from items.yml)
+  allowed-items:
+    - PET_ITEM_TIER_BOOST
+    - PET_ITEM_LUCKY_CLOVER
+    - PET_ITEM_TEXTBOOK
+    - PET_ITEM_FARMING_FOR_DUMMIES
+    - PET_ITEM_MINING_EXP_BOOST
+    - PET_ITEM_COMBAT_EXP_BOOST
+
+# GUI settings
+gui:
+  # Number of pets to display per page in the pet menu
+  pets-per-page: 45
+
+  # Sort order for pets in the menu
+  # Options: RARITY, LEVEL, TYPE, ALPHABETICAL
+  default-sort: RARITY
+
+  # Show pet abilities in the pet menu lore
+  show-abilities: true
+
+  # Show XP progress bar in pet menu lore
+  show-xp-progress: true
+
+# Debug settings
+debug:
+  # Log pet XP gains to console
+  log-xp-gains: false
+
+  # Log pet level ups to console
+  log-level-ups: true
+
+  # Log pet summon/unsummon events to console
+  log-summon-events: false
+
+# Pet type overrides
+# Uncomment to override specific pet settings
+# type-overrides:
+#   WOLF:
+#     max-level: 100
+#     xp-multiplier: 1.2
+#   ENDER_DRAGON:
+#     max-level: 200
+#     xp-multiplier: 0.8
+
+# Rarity XP formula overrides (ADVANCED - DO NOT MODIFY UNLESS YOU KNOW WHAT YOU'RE DOING)
+# These values match Hypixel's exponential formulas
+# Formula: coefficient * e^(exponent * level)
+xp-formulas:
+  common:
+    coefficient: 954.0
+    exponent: 0.0927
+  uncommon:
+    coefficient: 1588.0
+    exponent: 0.0934
+  rare:
+    coefficient: 2400.0
+    exponent: 0.0943
+  epic:
+    coefficient: 3330.0
+    exponent: 0.0952
+  legendary:
+    coefficient: 4908.0
+    exponent: 0.0989
+  mythic:
+    coefficient: 4908.0
+    exponent: 0.0989
