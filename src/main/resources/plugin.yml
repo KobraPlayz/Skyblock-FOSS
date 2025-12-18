@@ -78,6 +78,12 @@ commands:
     description: Leave your co-op island
     permission: skyblock.coop
 
+  # Phase 2 Commands
+  pets:
+    description: View and manage your pets
+    aliases: [pet]
+    permission: skyblock.pets
+
 permissions:
   skyblock.*:
     description: All Skyblock permissions
@@ -100,6 +106,8 @@ permissions:
       skyblock.hub: true
       skyblock.coop: true
       skyblock.garden: true
+      # Phase 2
+      skyblock.pets: true
 
   skyblock.menu:
     description: Access the Skyblock menu
@@ -164,4 +172,9 @@ permissions:
 
   skyblock.garden:
     description: Access garden features
+    default: true
+
+  # Phase 2 Permissions
+  skyblock.pets:
+    description: Access pet system
     default: true

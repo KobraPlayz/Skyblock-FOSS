@@ -220,6 +220,9 @@ public class SkyblockPlugin extends JavaPlugin {
         getCommand("coopview").setExecutor(new CoopCommand(this));
         getCommand("coopsalvage").setExecutor(new CoopCommand(this));
         getCommand("coopleave").setExecutor(new CoopCommand(this));
+
+        // Phase 2 commands
+        getCommand("pets").setExecutor(new PetsCommand(this));
     }
 
     private void registerListeners() {
