@@ -120,8 +120,23 @@ public class SkyblockMenu extends AbstractGUI {
             plugin.getGuiManager().openGUI(player, new GardenMenu(plugin, player.getUniqueId()));
         });
 
-        // Coming soon features (grayed out)
-        if (plugin.getModuleManager().isComingSoon("pets")) {
+        // Phase 2 - Pets
+        if (plugin.getModuleManager().isModuleEnabled("pets")) {
+            setItem(32, new ItemBuilder(Material.BONE)
+                    .name("&6&lPets")
+                    .lore(
+                            "&7View your pets and level them up",
+                            "&7to gain powerful bonuses!",
+                            "",
+                            "&7Pets gain XP when you train",
+                            "&7skills that match their type.",
+                            "",
+                            "&eClick to view!"
+                    )
+                    .build(), event -> {
+                plugin.getGuiManager().openGUI(player, new PetMenu(plugin));
+            });
+        } else if (plugin.getModuleManager().isComingSoon("pets")) {
             setItem(32, new ItemBuilder(Material.BONE)
                     .name("&8Pets")
                     .lore(
